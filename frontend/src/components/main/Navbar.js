@@ -25,8 +25,8 @@ function Navbar() {
         {/* Navbar brand */}
         <a className="navbar-brand mt-2 mt-lg-0" href="#">
           <img
-            src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-            height={15}
+            src="/logo512.png"
+            height={40}
             alt="MDB Logo"
             loading="lazy"
           />

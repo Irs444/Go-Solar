@@ -1,72 +1,52 @@
-import React from 'react'
-import { useFormik } from 'formik'
-import * as Yup from 'yup';
+import React from 'react';
+// import './login.css';
+import {useFormik} from "formik";
 import Swal from 'sweetalert2';
 
+const Login = () => {
 
 
-  const SignupSchema = Yup.object().shape({
-    name: Yup.string()
-      .min(2, 'Too Short!')
-      .max(10, 'Too Long!')
-      .required('Required'),
-    
-    email: Yup.string().email('Invalid email').required('Required'),
-    password: Yup
-      .string()
-      .required('Please Enter your password')
-      .matches(
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-        "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
-      ),
-      cPassword: Yup.string()
-      .oneOf([Yup.ref('password'), null], 'Passwords must match')
-  });
   
-  const Login = () => {
-   const signupForm = useFormik({
-    initialValues: {
-      name : '',
-      email : '',
-      password : '',
-      cPassword : ''
+
+
+  const loginForm = useFormik({
+    initialValues : {
+      email : "",
+      password : "",
     },
-    onSubmit: async (values, {setSubmitting}) => { 
-      // setSubmitting(true);
+    onSubmit : async (values) => {
       console.log(values);
-  
-      const res = await fetch('http://localhost:5000/user/add',{
-        method: 'POST',
-        body : JSON.stringify(values),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-  
-      console.log(res.status);
-  
-      if(res.status === 200){
-  
-        Swal.fire({
-          icon : 'success',
-          tittle : 'Nice',
-          text : 'You have successfully registered'
-        })
-      } else {
-        Swal.fire({
-          icon : 'error',
-          tittle : 'opps!!',
-          text : 'something went worng'
-        })
-      }
       
+      const res = await fetch('http://localhost:5000/user/authenticate',{
+        method: 'POST',
+        body: JSON.stringify(values),
+        headers:{
+          'Content-Type': 'application/json',
+        },
+      });
+      console.log(res.status);
+
+      if (res.status === 200){
+        Swal.fire({
+          icon: "success",
+          tittle: "nice",
+          text: "You have succesfyll login",
+        });
+
+      } else if (res.status === 401){
+        Swal.fire({
+          icon: "error",
+          tittle: "ERROR!!",
+          text: "Invalide Credential",
+        });
+      }
+       
+
     },
-    validationSchema: SignupSchema
-   });
-  
-  return (
-    <div>
-      <section className="vh-100">
+  });
+	return (
+	<div>
+		<section className="vh-100">
   <div className="container-fluid h-custom">
     <div className="row d-flex justify-content-center align-items-center h-100">
       <div className="col-md-9 col-lg-6 col-xl-5">
@@ -75,9 +55,11 @@ import Swal from 'sweetalert2';
           className="img-fluid"
           alt="Sample image"
         />
+          
       </div>
-      <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form>
+      <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1 ">
+		<div className='border border-primary rounded-3 p-4'>
+        <form onSubmit={loginForm.handleSubmit}>
           <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
             <p className="lead fw-normal mb-0 me-3">Sign in with</p>
             <button type="button" className="btn btn-primary btn-floating mx-1">
@@ -94,31 +76,32 @@ import Swal from 'sweetalert2';
             <p className="text-center fw-bold mx-3 mb-0">Or</p>
           </div>
           {/* Email input */}
-          <div className=" mb-4">
-            <label className="form-label" htmlFor="form3Example3">
-              Email address
-             
-            </label>
+          <div className="  mb-4">
             <input
               type="email"
-              id="form3Example3"
+              id="email"
+              value={loginForm.values.email}
+              onChange={loginForm.handleChange}
               className="form-control form-control-lg"
               placeholder="Enter a valid email address"
             />
+            <label className="form-label" htmlFor="form3Example3">
+              Email address
+            </label>
           </div>
           {/* Password input */}
-          <div className=" mb-3">
-          <label className="form-label" htmlFor="form3Example4">
-             Password
-           </label>
+          <div className="  mb-3">
             <input
-            
               type="password"
-              id="form3Example4"
+              id="password"
+              value={loginForm.values.password}
+              onChange={loginForm.handleChange}
               className="form-control form-control-lg"
               placeholder="Enter password"
-            
-           />
+            />
+            <label className="form-label" htmlFor="form3Example4">
+              Password
+            </label>
           </div>
           <div className="d-flex justify-content-between align-items-center">
             {/* Checkbox */}
@@ -139,7 +122,7 @@ import Swal from 'sweetalert2';
           </div>
           <div className="text-center text-lg-start mt-4 pt-2">
             <button
-              type="button"
+              type="submit"
               className="btn btn-primary btn-lg"
               style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
             >
@@ -153,6 +136,7 @@ import Swal from 'sweetalert2';
             </p>
           </div>
         </form>
+		</div>
       </div>
     </div>
   </div>
@@ -181,8 +165,8 @@ import Swal from 'sweetalert2';
   </div>
 </section>
 
-    </div>
-  )
+	</div>
+	)
 }
 
 export default Login
