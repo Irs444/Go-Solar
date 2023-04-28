@@ -1,9 +1,12 @@
+import { MDBCol, MDBAnimation } from 'mdb-react-ui-kit';
 import React from 'react'
-
+import './Home.css'
+// import Logo from '../../imgs/go solar.png'
 function Home() {
   return (
   <>
   <div>
+  
   <div
     data-draggable="true"
     className=""
@@ -17,101 +20,7 @@ function Home() {
       className="overflow-hidden pt-0"
       data-v-271253ee=""
     >
-      <section className="" style={{ paddingBottom: 1 }}>
-        {" "}
-        {/* Navbar */}
-        <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-2">
-          {" "}
-          {/* Container wrapper */}
-          <div className="container-fluid">
-            {" "}
-            {/* Navbar brand */}{" "}
-            <a
-              className="navbar-brand me-2"
-              href="https://mdbgo.com/"
-              draggable="false"
-            >
-              {" "}
-              <img
-                src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-                height={16}
-                alt="Logo"
-                loading="lazy"
-                style={{ marginTop: "-1px" }}
-                aria-controls="#picker-editor"
-                draggable="false"
-              />{" "}
-            </a>{" "}
-            {/* Toggle button */}{" "}
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-mdb-toggle="collapse"
-              data-mdb-target="#navbarButtonsExample"
-              aria-controls="navbarButtonsExample"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              {" "}
-              <i className="fas fa-bars" />{" "}
-            </button>{" "}
-            {/* Collapsible wrapper */}
-            <div className="collapse navbar-collapse" id="navbarButtonsExample">
-              {" "}
-              {/* Left links */}
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  {" "}
-                  <a
-                    className="nav-link"
-                    href="#"
-                    aria-controls="#picker-editor"
-                    draggable="false"
-                  >
-                    Dashboard
-                  </a>{" "}
-                </li>
-                <li className="nav-item">
-                  {" "}
-                  <a
-                    className="nav-link"
-                    href=""
-                    aria-controls="#picker-editor"
-                    draggable="false"
-                  >
-                    Team
-                  </a>{" "}
-                </li>
-                <li className="nav-item">
-                  {" "}
-                  <a
-                    className="nav-link"
-                    href=""
-                    aria-controls="#picker-editor"
-                    draggable="false"
-                  >
-                    Products
-                  </a>{" "}
-                </li>
-              </ul>{" "}
-              {/* Left links */}
-              <div className="d-flex align-items-center">
-                {" "}
-                <button
-                  type="button"
-                  className="btn   btn-primary btn-rounded me-3"
-                  aria-controls="#picker-editor"
-                >
-                  Buy now
-                </button>{" "}
-              </div>
-            </div>{" "}
-            {/* Collapsible wrapper */}
-          </div>{" "}
-          {/* Container wrapper */}
-        </nav>{" "}
-        {/* Navbar */}
-      </section>
+    
     </section>
     {/**/}
   </div>
@@ -123,65 +32,34 @@ function Home() {
       className="overflow-hidden pt-0"
       data-v-271253ee=""
     >
-      <section className="mb-10 position-relative">
-        {" "}
-        {/* SVG Background */}{" "}
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 320"
-          preserveAspectRatio="none"
-          className="svg position-absolute d-none d-lg-block"
-          style={{ height: 560, width: "100%", zIndex: 0, overflow: "hidden" }}
-        >
-          <defs>
-            <linearGradient id="sw-gradient-0" x1={0} x2={0} y1={1} y2={0}>
-              <stop stopColor="hsl(217, 102%, 99%)" offset="0%" />
-              <stop stopColor="hsl(217,88%, 93%)" offset="100%" />
-            </linearGradient>
-          </defs>
-          <path
-            fill="url(#sw-gradient-0)"
-            d="M 0.351 264.418 C 0.351 264.418 33.396 268.165 47.112 270.128 C 265.033 301.319 477.487 325.608 614.827 237.124 C 713.575 173.504 692.613 144.116 805.776 87.876 C 942.649 19.853 1317.845 20.149 1440.003 23.965 C 1466.069 24.779 1440.135 24.024 1440.135 24.024 L 1440 0 L 1360 0 C 1280 0 1120 0 960 0 C 800 0 640 0 480 0 C 320 0 160 0 80 0 L 0 0 L 0.351 264.418 Z"
-          ></path>
-        </svg>{" "}
+      <section className="mb-7 min-vh-100 position-relative">
+      
+           <div className="bg  position-absolute d-none d-lg-block"  style={{ height:"100%", width: "100%", zIndex: 0, overflow: "hidden" }}></div>
+           
+
+      {/* <div className="bg"></div> */}
         {/* Content */}
         <div className="px-4 py-5 px-md-5 text-center text-lg-start">
           <div className="container">
             <div className="row gx-lg-5 align-items-center">
               <div className="col-lg-6 mb-5 mb-lg-0" style={{ zIndex: 1 }}>
-                <h1 className="my-5 display-3 fw-bold ls-tight">
+                <h1 className="my-2 display-3 fw-bold ls-tight">
                   {" "}
-                  <span>The best offer</span> <br />{" "}
-                  <span className="text-primary">for your business</span>{" "}
+                  <span>Join the </span> <br />{" "}
+                  <span className="text" style={{color:"#19376D"}}>Energy Revolution</span>{" "}
                 </h1>{" "}
+                <p className='fw-normal mb-5'>Go Solar is transforming the way we access Renewable energy with simple and powerful solutions.</p>
                 <a
-                  className="btn   btn-primary btn-lg py-3 px-5 me-md-2 mb-3"
+                  className="btn   btn-warning btn-lg py-3 px-5 me-md-2 mb-3"
                   href="#"
                   role="button"
                   aria-controls="#picker-editor"
                 >
-                  Get started
+                  Calculate Your Saving
                 </a>{" "}
-                <a
-                  className="btn   btn-link btn-lg py-3 px-5 mb-3"
-                  data-ripple-color="primary"
-                  href="#"
-                  role="button"
-                  aria-controls="#picker-editor"
-                >
-                  Learn more
-                </a>
+              
               </div>
-              <div className="col-lg-6 mb-5 mb-lg-0" style={{ zIndex: 1 }}>
-                {" "}
-                <img
-                  src="https://mdbootstrap.com/img/new/standard/city/017.jpg"
-                  className="w-100 rounded-4 shadow-5"
-                  alt=""
-                  aria-controls="#picker-editor"
-                />{" "}
-              </div>
+            
             </div>
           </div>
         </div>

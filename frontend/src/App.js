@@ -5,6 +5,9 @@ import Signup from './components/main/Signup';
 import Login from './components/main/Login';
 import Home from './components/main/Home';
 import Main from './components/main';
+import SellerLogin from './components/main/SellerLogin';
+import Seller from './components/main/Seller';
+import SellerSignUp from './components/main/SellerSignUp';
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +19,9 @@ function App() {
         <Route path="signup" element={<Signup />} />
         <Route path="Login" element={<Login />} />
         <Route path="Home" element={<Home />} />
+        <Route path="SellerLogin" element={<SellerLogin />} />
+        <Route path="SellerSignUp" element={<SellerSignUp />} />
+        <Route path="Seller" element={<Seller/>} />
         </Route >
 
       </Routes>
