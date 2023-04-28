@@ -5,6 +5,8 @@ import Signup from './components/main/Signup';
 import Login from './components/main/Login';
 import Home from './components/main/Home';
 import Main from './components/main';
+import Seller from './components/seller';
+import ManageEquipment from './components/seller/ManageEquipment';
 function App() {
   return (
     <BrowserRouter>
@@ -16,9 +18,16 @@ function App() {
         <Route path="signup" element={<Signup />} />
         <Route path="Login" element={<Login />} />
         <Route path="Home" element={<Home />} />
-        </Route >
+       </Route>
+        <Route path="seller" element={<Seller/>} >
 
+        <Route path="ManageEquipment" element={<ManageEquipment />} />
+        {/* <Route path="Login" element={<Login />} />
+        <Route path="Home" element={<Home />} /> */}
+       </Route>
+        
       </Routes>
+      
     </BrowserRouter>
   )
 }
