@@ -5,6 +5,10 @@ import Signup from './components/main/Signup';
 import Login from './components/main/Login';
 import Home from './components/main/Home';
 import Main from './components/main';
+import SellerLogin from './components/main/SellerLogin';
+import SellerSignUp from './components/main/SellerSignUp';
+import Seller from './components/seller';
+import ManageEquipment from './components/seller/ManageEquipment';
 function App() {
   return (
     <BrowserRouter>
@@ -16,9 +20,17 @@ function App() {
         <Route path="signup" element={<Signup />} />
         <Route path="Login" element={<Login />} />
         <Route path="Home" element={<Home />} />
-        </Route >
+        <Route path="SellerLogin" element={<SellerLogin />} />
+        <Route path="SellerSignUp" element={<SellerSignUp />} />
+        <Route path="Seller" element={<Seller/>} />
 
+        <Route path="ManageEquipment" element={<ManageEquipment />} />
+        {/* <Route path="Login" element={<Login />} />
+        <Route path="Home" element={<Home />} /> */}
+       </Route>
+        
       </Routes>
+      
     </BrowserRouter>
   )
 }

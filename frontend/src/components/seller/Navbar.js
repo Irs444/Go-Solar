@@ -25,7 +25,7 @@ function Navbar() {
         {/* Navbar brand */}
         <a className="navbar-brand mt-2 mt-lg-0" href="#">
           <img
-            src="/go solar.png"
+            src="/logo512.png"
             height={40}
             alt="MDB Logo"
             loading="lazy"
