@@ -14,6 +14,7 @@ import ManageExpert from './components/admin/ManageExpert';
 import ManageUser from './components/admin/ManageUser';
 import AdminProfile from './components/admin/AdminProfile';
 import Trying from './components/admin/Trying';
+import AddEquipment from './components/seller/AddEquipment';
 function App() {
   return (
     <BrowserRouter>

@@ -6,6 +6,7 @@ const myschema = new Schema({
     password : String,
     createdAt: Date,
     avatar: String,
+    
 
 });
 
