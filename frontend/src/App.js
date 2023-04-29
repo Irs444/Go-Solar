@@ -9,6 +9,8 @@ import SellerLogin from './components/main/SellerLogin';
 import SellerSignUp from './components/main/SellerSignUp';
 import Seller from './components/seller';
 import ManageEquipment from './components/seller/ManageEquipment';
+import AddEquipment from './components/seller/AddEquipment';
+import AdminProfile from './components/admin/AdminProfile';
 function App() {
   return (
     <BrowserRouter>
@@ -25,8 +27,8 @@ function App() {
         <Route path="Seller" element={<Seller/>} />
 
         <Route path="ManageEquipment" element={<ManageEquipment />} />
-        {/* <Route path="Login" element={<Login />} />
-        <Route path="Home" element={<Home />} /> */}
+        <Route path="AddEquipment" element={<AddEquipment />} />
+        <Route path="AdminProfile" element={<AdminProfile />} />
        </Route>
         
       </Routes>

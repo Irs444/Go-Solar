@@ -39,5 +39,5 @@ const AddEquipment = () => {
   )
 }
 
-export default AddEquipment
+export default AddEquipment;
 
