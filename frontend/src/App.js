@@ -13,6 +13,7 @@ import Admin from './components/admin';
 import ManageExpert from './components/admin/ManageExpert';
 import ManageUser from './components/admin/ManageUser';
 import AdminProfile from './components/admin/AdminProfile';
+import Trying from './components/admin/Trying';
 function App() {
   return (
     <BrowserRouter>
@@ -38,6 +39,7 @@ function App() {
           <Route path="AdminProfile" element={<AdminProfile />} />
           <Route path="ManageExpert" element={<ManageExpert />} />
           <Route path="ManageUser" element={<ManageUser />} />
+          <Route path="trying" element={<Trying />} />
 
         </Route>
       </Routes>

@@ -26,7 +26,7 @@ const AdminProfile = () => {
               width={100}
               height={100}
             />
-            <div className="name">ImDezCode</div>
+            <div className="name">Name</div>
             <div className="job">Web Developer</div>
           </div>
           <div className="sidenav-url">
@@ -42,14 +42,14 @@ const AdminProfile = () => {
         {/* End */}
         {/* Main */}
         <div className="main">
-          <h2>IDENTITY</h2>
+          <h1>IDENTITY</h1>
           <div className="card">
             <div className="card-body">
               <i className="fa fa-pen fa-xs edit" />
               <table>
                 <tbody>
                   <tr>
-                    <td><h4>Name</h4></td>
+                    <td><h4>Department</h4></td>
                     <td>:</td>
                     <td>ImDezCode</td>
                   </tr>
@@ -82,7 +82,7 @@ const AdminProfile = () => {
               </table>
             </div>
           </div>
-          <h2>SOCIAL MEDIA</h2>
+          <h1>SOCIAL MEDIA</h1>
           <div className="card">
             <div className="card-body">
               <i className="fa fa-pen fa-xs edit" />
