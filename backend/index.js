@@ -5,6 +5,7 @@ const port = 5000;
 
 const userRouter = require('./routers/userRouter');
 const equipmentRouter = require('./routers/equipmentRouter');
+const sellerRouter = require('./routers/sellerRouter');
 
 const cors = require('cors');
 app.use(cors({ origin: 'http://localhost:3000'}));
