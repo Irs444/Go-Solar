@@ -9,6 +9,7 @@ import SellerLogin from './components/main/SellerLogin';
 import SellerSignUp from './components/main/SellerSignUp';
 import Seller from './components/seller';
 import ManageEquipment from './components/seller/ManageEquipment';
+import AddEquipment from './components/seller/AddEquipment';
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +26,7 @@ function App() {
         <Route path="Seller" element={<Seller/>} />
 
         <Route path="ManageEquipment" element={<ManageEquipment />} />
+        <Route path="AddEquipment" element={<AddEquipment />} />
         {/* <Route path="Login" element={<Login />} />
         <Route path="Home" element={<Home />} /> */}
        </Route>
