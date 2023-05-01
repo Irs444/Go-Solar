@@ -2,13 +2,13 @@ import React from 'react'
 import Navbar from './Navbar'
 import { Outlet } from 'react-router-dom'
 
-const index = () => {
+const Admin = () => {
   return (
     <div>
         <Navbar/>
-        <Outlet/>
+        <Outlet />
     </div>
   )
 }
 
-export default index
+export default Admin

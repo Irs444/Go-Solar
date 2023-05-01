@@ -25,7 +25,7 @@ function Navbar() {
         {/* Navbar brand */}
         <a className="navbar-brand mt-2 mt-lg-0" href="#">
           <img
-            src="/logo512.png"
+            src="/go solar.png"
             height={40}
             alt="MDB Logo"
             loading="lazy"
@@ -35,19 +35,24 @@ function Navbar() {
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
             <NavLink className="nav-link" to="/home">
-             Home
+             Dashboard
             </NavLink>
           </li>
           <li className="nav-item">
             <NavLink className="nav-link" to="/login">
-              Login
+              Manage Equipment
             </NavLink>
           </li>
           <li className="nav-item">
             <NavLink className="nav-link" to="/signup">
-              Signup
+              Manage User
             </NavLink>
           </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/signup">
+                  Manage Sellers
+                </NavLink>
+              </li>
         </ul>
         {/* Left links */}
       </div>
@@ -55,9 +60,7 @@ function Navbar() {
       {/* Right elements */}
       <div className="d-flex align-items-center">
         {/* Icon */}
-        <a className="text-reset me-3" href="#">
-          <i className="fas fa-shopping-cart" />
-        </a>
+        
         {/* Notifications */}
         <div className="dropdown">
           <a
@@ -68,10 +71,7 @@ function Navbar() {
             data-mdb-toggle="dropdown"
             aria-expanded="false"
           >
-            <i className="fas fa-bell" />
-            <span className="badge rounded-pill badge-notification bg-danger">
-              1
-            </span>
+            
           </a>
           <ul
             className="dropdown-menu dropdown-menu-end"

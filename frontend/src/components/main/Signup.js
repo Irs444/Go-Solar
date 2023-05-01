@@ -29,11 +29,11 @@ const Signup = () => {
     password : '',
     cPassword : ''
   },
-  onSubmit: async (values, {setSubmitting}) => { 
+  onSubmit: async (values, {setSubmitting}) => {
     // setSubmitting(true);
     console.log(values);
 
-    const res = await fetch('http://localhost:5000/user/add',{
+    const res = await fetch('http://localhost:5000/user/add' , {
       method: 'POST',
       body : JSON.stringify(values),
       headers: {
@@ -54,7 +54,7 @@ const Signup = () => {
       Swal.fire({
         icon : 'error',
         tittle : 'opps!!',
-        text : 'something went worng'
+        text : 'something went wrong'
       })
     }
     
