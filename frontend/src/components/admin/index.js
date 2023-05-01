@@ -1,13 +1,13 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
 import Navbar from './Navbar'
+import { Outlet } from 'react-router-dom'
 
 const Admin = () => {
   return (
-  <div>
-  {/* <Navbar/> */}
-     <Outlet/>
-  </div>
+    <div>
+        <Navbar/>
+        <Outlet />
+    </div>
   )
 }
 
