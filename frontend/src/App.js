@@ -25,30 +25,30 @@ function App() {
         <Route path="/" element={<Navigate to="/main/home" />} />
         <Route path="main" element={<Main />} >
 
-        <Route path="signup" element={<Signup />} />
-        <Route path="Login" element={<Login />} />
-        <Route path="Home" element={<Home />} />
-        <Route path="SellerLogin" element={<SellerLogin />} />
-        <Route path="SellerSignUp" element={<SellerSignUp />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="Login" element={<Login />} />
+          <Route path="Home" element={<Home />} />
+          <Route path="SellerLogin" element={<SellerLogin />} />
+          <Route path="SellerSignUp" element={<SellerSignUp />} />
         </Route>
-        <Route path="Seller" element={<Seller/>} >
+        <Route path="Seller" element={<Seller />} >
 
-        <Route path="ManageEquipment" element={<ManageEquipment />} />
-        <Route path="AddEquipment" element={<AddEquipment />} />
-       
-       </Route>
+          <Route path="ManageEquipment" element={<ManageEquipment />} />
+          <Route path="AddEquipment" element={<AddEquipment />} />
+
+        </Route>
         <Route path="Admin" element={<Admin />} >
 
-        <Route path="AdminProfile" element={<AdminProfile />} />
-        <Route path="ManageExpert" element={<ManageExpert />} />
-        <Route path="ManageUser" element={<ManageUser />} />
-       </Route>
-       <Route path="User" element={<User/>} >
+          <Route path="AdminProfile" element={<AdminProfile />} />
+          <Route path="ManageExpert" element={<ManageExpert />} />
+          <Route path="ManageUser" element={<ManageUser />} />
+        </Route>
+        <Route path="User" element={<User />} >
 
-<Route path="ManageOrders" element={<ManageOrders />} />
-<Route path="UserProfile" element={<UserProfile />} />
+          <Route path="ManageOrders" element={<ManageOrders />} />
+          <Route path="UserProfile" element={<UserProfile />} />
 
-</Route>
+        </Route>
       </Routes>
 
     </BrowserRouter>

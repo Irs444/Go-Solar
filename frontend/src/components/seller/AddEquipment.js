@@ -63,6 +63,8 @@ const AddEquipment = () => {
   
    });
   const [selectedImage, setSelectedImage] = useState(null);
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.setItem('seller')));
+
   return (
     <MDBContainer className="my-5">
       <h2>Add New Equipment</h2>

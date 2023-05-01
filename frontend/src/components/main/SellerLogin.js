@@ -42,6 +42,10 @@ function SellerLogin() {
           text: "You have loggedin successfully",
         });
 
+        const data = await res.json();
+
+        sessionStorage.setItem('seller', JSON.stringify(data));
+
       } else if (res.status === 401){
         Swal.fire({
           icon: "error",
@@ -84,8 +88,9 @@ function SellerLogin() {
               value={loginForm.values.password}
               onChange={loginForm.handleChange} wrapperClass='mb-4' label='Password'  size="lg"/>
 
-              <button className="mb-2 px-5 btn-success" size='lg'>Login</button>
-              <a className="small text-muted" style={{color: '#609966'}} href="#!">Forgot password?</a>
+              <a className="small text-muted " style={{color: '#609966'}} href="#!">Forgot password?</a>
+              <br/>
+              <button className=" btn mt-2 mb-2 px-5 btn-success btn-lg btn-block" >Login</button>
               <p className="mb-3 pb-lg-2" style={{color: '#3c6255'}}> <a href="#!" style={{color: '#609966'}}>Become a seller</a></p>
 
               <div className='d-flex flex-row justify-content-start'>
