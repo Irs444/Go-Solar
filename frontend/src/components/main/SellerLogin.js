@@ -84,7 +84,7 @@ function SellerLogin() {
               value={loginForm.values.password}
               onChange={loginForm.handleChange} wrapperClass='mb-4' label='Password'  size="lg"/>
 
-              <MDBBtn className="mb-2 px-5 btn-success" size='lg'>Login</MDBBtn>
+              <button className="mb-2 px-5 btn-success" size='lg'>Login</button>
               <a className="small text-muted" style={{color: '#609966'}} href="#!">Forgot password?</a>
               <p className="mb-3 pb-lg-2" style={{color: '#3c6255'}}> <a href="#!" style={{color: '#609966'}}>Become a seller</a></p>
 

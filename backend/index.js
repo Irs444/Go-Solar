@@ -15,6 +15,7 @@ app.use(express.json());
 
 app.use('/user', userRouter);
 app.use('/seller', sellerRouter);
+app.use('/equipment', equipmentRouter);
 
 app.get('/', (req, res) => {
     res.send('working fine');

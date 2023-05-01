@@ -17,9 +17,51 @@ import {
 
 }
   from 'mdb-react-ui-kit';
+import { useFormik } from 'formik';
+import Swal from 'sweetalert2';
 
 // import MDBFileupload from 'mdb-react-fileupload';
 const AddEquipment = () => {
+  const addequipmentForm = useFormik({
+    initialValues: {
+      tittle : '',
+      description : '',
+      price : '',
+      category : '',
+      image : '',
+    },
+    onSubmit: async (values, {setSubmitting}) => { 
+      // setSubmitting(true);
+      console.log(values);
+  
+      const res = await fetch('http://localhost:5000/equipment/add',{
+        method: 'POST',
+        body : JSON.stringify(values),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+  
+      console.log(res.status);
+  
+      if(res.status === 200){
+  
+        Swal.fire({
+          icon : 'success',
+          tittle : 'Nice',
+          text : 'You have successfully registered'
+        })
+      } else {
+        Swal.fire({
+          icon : 'error',
+          tittle : 'opps!!',
+          text : 'something went worng'
+        })
+      }
+      
+    },
+  
+   });
   const [selectedImage, setSelectedImage] = useState(null);
   return (
     <MDBContainer className="my-5">
@@ -60,16 +102,25 @@ const AddEquipment = () => {
           <MDBCol md='6'>
             <MDBCardBody className='d-flex flex-column'>
 
-              <form>
+              <form onSubmit={addequipmentForm.handleSubmit}>
 
 
-                <MDBInput wrapperClass='mb-4' id='form6Example3' label='Title' />
-                {/* <MDBInput wrapperClass='mb-4' textarea rows={4} id='form6Example4' label='Description' /> */}
-                <MDBTextArea wrapperClass='mb-4' label='Description' id='textAreaExample' rows={4} />
-                <MDBInput wrapperClass='mb-4' type='number' id='form6Example5' label='Price' />
-                <MDBInput wrapperClass='mb-4' type='tel' id='form6Example6' label='Phone' />
+                <MDBInput wrapperClass='mb-4' id='tittle' type='Tittle' label='Tittle' value={addequipmentForm.values.tittle} onChange={addequipmentForm.handleChange} className="form-control form-control-lg" />
+              
+                <MDBInput wrapperClass='mb-4'  id='description' type='Description' label='Description' value={addequipmentForm.values.description}
+              onChange={addequipmentForm.handleChange} 
+              />
+                
+                <MDBInput wrapperClass='mb-4' type='price' id='price' label='price'  value={addequipmentForm.values.price}
+              onChange={addequipmentForm.handleChange}
+               />
+                {/* <MDBInput wrapperClass='mb-4' type='tel' id='Image' label='Image' value={addequipmentForm.values.image}
+              onChange={addequipmentForm.handleChange}
+              className="form-control form-control-lg" /> */}
 
-                <MDBInput wrapperClass='mb-4' id='form6Example7' label='Category' />
+                <MDBInput wrapperClass='mb-4' id='category'type='Category' label='Category' value={addequipmentForm.values.category}
+              onChange={addequipmentForm.handleChange}
+               />
 
                 {/* <MDBCheckbox
       wrapperClass='d-flex justify-content-center mb-4'
@@ -77,15 +128,15 @@ const AddEquipment = () => {
       label='Create an account?'
       defaultChecked
     /> */}
-                <MDBBtn rounded className='mx-2' color='primary'>
+                <button rounded className='mx-2' color='primary'>
                   Save
-                </MDBBtn>
-                <MDBBtn rounded className='mx-2' color='info'>
+                </button>
+                <button rounded className='mx-2' color='info'>
                   Save & Add Another
-                </MDBBtn>
-                <MDBBtn outline rounded className='text-dark mx-2 ' color='Dark'>
+                </button>
+                <button outline rounded className='text-dark mx-2 ' color='Dark'>
                   Cancel
-                </MDBBtn>
+                </button>
 
               </form>
 
