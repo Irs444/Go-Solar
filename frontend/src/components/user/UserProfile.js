@@ -13,9 +13,7 @@ export default function EditButton() {
                 
                   <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
                     alt="Generic placeholder image" className="mt-4 mb-2 img-thumbnail" fluid style={{ width: '150px', zIndex: '1' }} />
-                  <button style={{zIndex: 2}} >
-                    Edit profile
-                  </button>
+                  
                 </div>
                 <div className="ms-3" style={{ marginTop: '130px' }}>
                   <MDBTypography tag="h5">Andy Horwitz</MDBTypography>
