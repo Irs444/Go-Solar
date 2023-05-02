@@ -19,8 +19,8 @@ import {
   from 'mdb-react-ui-kit';
 import { useFormik } from 'formik';
 import Swal from 'sweetalert2';
-import app_config from '../../../config';
-import { toast } from 'react-hot-toast';
+import app_config from '../../config';
+import { toast}  from 'react-hot-toast';
 
 // import MDBFileupload from 'mdb-react-fileupload';
 const AddEquipment = () => {
@@ -58,6 +58,7 @@ const AddEquipment = () => {
     },
     onSubmit: async (values, {setSubmitting}) => { 
       // setSubmitting(true);
+      values.image = selImage.name;
       console.log(values);
   
       const res = await fetch('http://localhost:5000/equipment/add',{
@@ -115,13 +116,12 @@ const AddEquipment = () => {
               <br />
               <br />
 
+                <label htmlFor='upload-image' className="btn btn-outline-dark">Upload Image</label>
               <input
+              hidden
+              id="upload-image"
                 type="file"
-                name="myImage"
-                onChange={(event) => {
-                  console.log(event.target.files[0]);
-                  setSelectedImage(event.target.files[0]);
-                }}
+                onChange={uploadImage}
               />
             </div>
           </MDBCol>
