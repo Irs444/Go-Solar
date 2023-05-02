@@ -19,11 +19,33 @@ import {
   from 'mdb-react-ui-kit';
 import { useFormik } from 'formik';
 import Swal from 'sweetalert2';
+import app_config from '../../../config';
 
 // import MDBFileupload from 'mdb-react-fileupload';
 const AddEquipment = () => {
+
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('seller')));
+
+    const [selImage, setSelImage] = useState('');
+  
+    const {apiUrl} = app_config;
+  
+    const uploadImage = async (e) => {
+      const file = e.target.files[0];
+      setSelImage(file);
+      const fd = new FormData();
+      fd.append("myfile", file);
+      fetch(apiUrl + "/util/uploadfile", {
+        method: "POST",
+        body: fd,
+      }).then((res) => {
+        if (res.status === 200) {
+          console.log("file uploaded");
+          toast.success("File Uploaded!!");
+        }
+      });
+    }
   const addequipmentForm = useFormik({
     initialValues: {
       title : '',
