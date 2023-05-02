@@ -24,7 +24,7 @@ import Swal from 'sweetalert2';
 const AddEquipment = () => {
   const addequipmentForm = useFormik({
     initialValues: {
-      tittle : '',
+      title : '',
       description : '',
       price : '',
       category : '',
@@ -48,13 +48,13 @@ const AddEquipment = () => {
   
         Swal.fire({
           icon : 'success',
-          tittle : 'Nice',
+          title : 'Nice',
           text : 'You have successfully registered'
         })
       } else {
         Swal.fire({
           icon : 'error',
-          tittle : 'opps!!',
+          title : 'opps!!',
           text : 'something went worng'
         })
       }
@@ -63,7 +63,9 @@ const AddEquipment = () => {
   
    });
   const [selectedImage, setSelectedImage] = useState(null);
-  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.setItem('seller')));
+
+  
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('seller')));
 
   return (
     <MDBContainer className="my-5">
@@ -107,7 +109,7 @@ const AddEquipment = () => {
               <form onSubmit={addequipmentForm.handleSubmit}>
 
 
-                <MDBInput wrapperClass='mb-4' id='tittle' type='Tittle' label='Tittle' value={addequipmentForm.values.tittle} onChange={addequipmentForm.handleChange} className="form-control form-control-lg" />
+                <MDBInput wrapperClass='mb-4' id='title' type='title' label='Title' value={addequipmentForm.values.title} onChange={addequipmentForm.handleChange} className="form-control form-control-lg" />
               
                 <MDBInput wrapperClass='mb-4'  id='description' type='Description' label='Description' value={addequipmentForm.values.description}
               onChange={addequipmentForm.handleChange} 
@@ -116,9 +118,9 @@ const AddEquipment = () => {
                 <MDBInput wrapperClass='mb-4' type='price' id='price' label='price'  value={addequipmentForm.values.price}
               onChange={addequipmentForm.handleChange}
                />
-                {/* <MDBInput wrapperClass='mb-4' type='tel' id='Image' label='Image' value={addequipmentForm.values.image}
+                <MDBInput wrapperClass='mb-4' type='image' id='image' label='image' value={addequipmentForm.values.image}
               onChange={addequipmentForm.handleChange}
-              className="form-control form-control-lg" /> */}
+              className="form-control form-control-lg" />
 
                 <MDBInput wrapperClass='mb-4' id='category'type='Category' label='Category' value={addequipmentForm.values.category}
               onChange={addequipmentForm.handleChange}
