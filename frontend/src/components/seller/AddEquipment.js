@@ -20,6 +20,7 @@ import {
 import { useFormik } from 'formik';
 import Swal from 'sweetalert2';
 import app_config from '../../../config';
+import { toast } from 'react-hot-toast';
 
 // import MDBFileupload from 'mdb-react-fileupload';
 const AddEquipment = () => {
