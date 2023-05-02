@@ -19,6 +19,8 @@ import ManageOrders from './components/user/ManageOrders';
 import UserProfile from './components/user/UserProfile';
 import Expert from './components/expert';
 import Contacts from './components/expert/Contacts';
+import ListEquipment from './components/main/ListEquipment';
+
 function App() {
   return (
     <BrowserRouter>
@@ -32,6 +34,7 @@ function App() {
           <Route path="Home" element={<Home />} />
           <Route path="SellerLogin" element={<SellerLogin />} />
           <Route path="SellerSignUp" element={<SellerSignUp />} />
+          <Route path="ListEquipment" element={<ListEquipment />} />
         </Route>
         <Route path="Seller" element={<Seller />} >
 
