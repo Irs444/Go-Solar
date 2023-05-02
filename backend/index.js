@@ -6,7 +6,7 @@ const port = 5000;
 const userRouter = require('./routers/userRouter');
 const equipmentRouter = require('./routers/equipmentRouter');
 const sellerRouter = require('./routers/sellerRouter');
-
+const contactRouter=require('./routers/contactRouter')
 const cors = require('cors');
 app.use(cors({ origin: 'http://localhost:3000'}));
 
@@ -16,6 +16,7 @@ app.use(express.json());
 app.use('/user', userRouter);
 app.use('/seller', sellerRouter);
 app.use('/equipment', equipmentRouter);
+app.use('/contact', contactRouter);
 
 app.get('/', (req, res) => {
     res.send('working fine');

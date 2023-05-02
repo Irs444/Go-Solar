@@ -17,6 +17,8 @@ import AdminProfile from './components/admin/AdminProfile';
 import User from './components/user';
 import ManageOrders from './components/user/ManageOrders';
 import UserProfile from './components/user/UserProfile';
+import Expert from './components/expert';
+import Contacts from './components/expert/Contacts';
 function App() {
   return (
     <BrowserRouter>
@@ -47,6 +49,11 @@ function App() {
 
           <Route path="ManageOrders" element={<ManageOrders />} />
           <Route path="UserProfile" element={<UserProfile />} />
+
+        </Route>
+        <Route path="Expert" element={<Expert/>} >
+
+          <Route path="Contacts" element={<Contacts />} />
 
         </Route>
       </Routes>

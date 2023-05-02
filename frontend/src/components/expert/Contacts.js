@@ -12,9 +12,58 @@ import {
   MDBTextArea
 }
 from 'mdb-react-ui-kit';
-import ContactImg from '../../imgs/contactImg.png'
+import ContactImg from '../../imgs/contactImg.svg'
+import { useFormik } from 'formik';
+import Swal from 'sweetalert2';
 
 const Contacts = () => {
+    const Contact=useFormik({
+       initialValues:{
+        name:"",
+        phone:"",
+        email:"",
+        subject:"",
+        message:""
+       },
+       onSubmit: async (values, {setSubmitting}) => { 
+          
+        console.log(values);
+      
+    
+        const res = await fetch('http://localhost:5000/contact/add',{
+          method: 'POST',
+          body : JSON.stringify(values),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+    
+        console.log(res.status);
+    
+        if(res.status === 200){
+    
+          Swal.fire({
+            icon : 'success',
+            title : 'Nice',
+            text : 'You have successfully registered'
+          })
+        } else {
+          Swal.fire({
+            icon : 'error',
+            title : 'opps!!',
+            text : 'something went worng'
+          })
+        }
+        
+      },
+      // validationSchema: SignupSchema
+     });
+
+
+   
+
+    
+
   return (<>
 <div className="text-center">
 <h1 className=" display-3 fw-bold ls-tight px-3" style={{color: 'hsl(218, 81%, 95%)'}}>
@@ -31,13 +80,17 @@ const Contacts = () => {
 
         <MDBCol md='6' className='text-center text-md-start d-flex flex-column justify-content-center'>
 
-        <img src={ContactImg} alt="" className='justify-content-center' style={{ maxWidth: '100rem' }} />
-
-
-         
-
-        </MDBCol>
-
+        <img src={ContactImg} alt="" className='justify-content-center' style={{ maxWidth: '40rem' }} />
+<div className="text-center">
+    
+<h3>Get In Touch</h3>
+            <hr />
+<i class="fa-sharp fa-light fa-circle-location-arrow"></i>    
+<i class="fa-solid fa-phone">+91 3678467834</i> <br />
+<i class="fa-solid fa-envelope ">hello@demoemail.com</i>    <br />   
+<i class="fa-sharp fa-solid fa-location-dot">931 Abia Martin Drive, PA Pennsylania-62465</i>
+</div>
+</MDBCol>
         <MDBCol md='6' className='position-relative'>
 
           <div id="radius-shape-1" className="position-absolute rounded-circle shadow-5-strong"></div>
@@ -45,31 +98,25 @@ const Contacts = () => {
 
           <MDBCard className='my-5 bg-glass'>
             <MDBCardBody className='p-5'>
-
+<form onSubmit={Contact.handleSubmit}>
+    
               
 
-              <MDBInput wrapperClass='mb-4' label='Name' id='form3' type='text'/>
-              <MDBInput wrapperClass='mb-4' label='Phone' id='form3' type='tel'/>
-              <MDBInput wrapperClass='mb-4' label='Email' id='form3' type='email'/>
-              <MDBInput wrapperClass='mb-4' label='Subject' id='form4' type='text'/>
-              <MDBTextArea wrapperClass='mb-4' label='Message' id='textAreaExample' rows={4} />
+<MDBInput wrapperClass='mb-4'  label='Name' id='name' values={Contact.values.name} onChange={Contact.handleChange} type='text'/>
+              <MDBInput wrapperClass='mb-4'  label='Phone' id='phone' values="Contact.values.phone" onChange={Contact.handleChange} type='tel'/>
+              <MDBInput wrapperClass='mb-4' label='Email' id='email' values="Contact.values.email" onChange={Contact.handleChange} type='email'/>
+              <MDBInput wrapperClass='mb-4' label='Subject' id='subject' values="Contact.values.subject" onChange={Contact.handleChange} type='text'/>
+              <MDBTextArea wrapperClass='mb-4' label='Message' id='message' values="Contact.values.message" onChange={Contact.handleChange} rows={4} />
 
               {/* <div className='d-flex justify-content-center mb-4'>
                 <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to our newsletter' />
               </div> */}
 
-              <button className=" btn mt-2 mb-2 px-5 btn-success btn-lg btn-block" >SEND MESSAGE</button>
+              <button type='submit' className=" btn mt-2 mb-2 px-5 btn-success btn-lg btn-block" >SEND MESSAGE</button>
 
-              <div className="text-center">
+            
 
-                <p>or sign up with:</p>
-
-                 
-
-               
-               
-              </div>
-
+</form>
             </MDBCardBody>
           </MDBCard>
 

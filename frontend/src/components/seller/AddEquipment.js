@@ -11,7 +11,7 @@ import {
   MDBCard,
   MDBCardBody,
   MDBCardImage,
-
+  
   MDBIcon,
   MDBTextArea,
 
@@ -22,11 +22,14 @@ import Swal from 'sweetalert2';
 
 // import MDBFileupload from 'mdb-react-fileupload';
 const AddEquipment = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('seller')));
   const addequipmentForm = useFormik({
     initialValues: {
-      tittle : '',
+      title : '',
       description : '',
       price : '',
+      seller : currentUser._id,
       category : '',
       image : '',
     },
@@ -62,12 +65,10 @@ const AddEquipment = () => {
     },
   
    });
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.setItem('seller')));
 
   return (
     <MDBContainer className="my-5">
-      <h2>Add New Equipment</h2>
+      {/* <h2>Add New Equipment</h2> */}
       <MDBCard >
         <MDBRow className='g-0'>
 

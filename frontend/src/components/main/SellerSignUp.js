@@ -8,8 +8,7 @@ import {
   MDBRow,
   MDBCol,
   MDBInput,
-  MDBRadio,
-  MDBSelect
+  MDBRadio
 }
 from 'mdb-react-ui-kit';
 import signup from '../../imgs/signup.jpg'
@@ -33,9 +32,9 @@ function SellerSignUp() {
           state:""
         },
         onSubmit: async (values, {setSubmitting}) => { 
-          // setSubmitting(true);
+          
           console.log(values);
-        //   return;
+        
       
           const res = await fetch('http://localhost:5000/seller/add',{
             method: 'POST',

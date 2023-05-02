@@ -16,10 +16,7 @@ setUserList(data);
       fetchUserData();
       
   }, [])
-  // const Filter=(e)=>{
-  //   setRecords(userList.filter(f=>f.name.toLowerCase().includes(e.target.value)))
-  //   // console.log(e.name);
-  // }
+ 
     const [search,setSearch]=useState('')
   return (
     <>
