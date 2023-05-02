@@ -65,10 +65,7 @@ const AddEquipment = () => {
     },
   
    });
-  const [selectedImage, setSelectedImage] = useState(null);
-
-  
-  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('seller')));
+ 
 
   return (
     <MDBContainer className="my-5">
