@@ -15,6 +15,7 @@ import logo from '../../imgs/logo.jpg'
 import seller from '../../imgs/seller.jpg'
 import Swal from 'sweetalert2';
 import { useFormik } from 'formik';
+import { Link } from 'react-router-dom';
 
 function SellerLogin() {
     
@@ -91,7 +92,9 @@ function SellerLogin() {
               <a className="small text-muted " style={{color: '#609966'}} href="#!">Forgot password?</a>
               <br/>
               <button className=" btn mt-2 mb-2 px-5 btn-success btn-lg btn-block" >Login</button>
-              <p className="mb-3 pb-lg-2" style={{color: '#3c6255'}}> <a href="#!" style={{color: '#609966'}}>Become a seller</a></p>
+              <p className="mb-3 pb-lg-2" style={{color: '#3c6255'}}> <a href="#!" style={{color: '#609966'}}> <Link className="nav-link" to="/main/SellerSignUp">
+            Become a Seller
+            </Link></a></p>
 
               <div className='d-flex flex-row justify-content-start'>
                 <a href="#!" className="small text-muted me-1">Terms of use.</a>
