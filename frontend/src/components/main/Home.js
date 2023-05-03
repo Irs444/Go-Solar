@@ -1,6 +1,8 @@
-import { MDBCol, MDBAnimation } from 'mdb-react-ui-kit';
+import { MDBCol, MDBAnimation, MDBCarouselItem, MDBCarousel, MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBRow, MDBIcon, MDBFooter, MDBContainer, MDBBtn } from 'mdb-react-ui-kit';
 import React from 'react'
 import './Home.css'
+import Contacts from '../expert/Contacts';
+import goSolar from '../../imgs/goSolar.ico'
 // import Logo from '../../imgs/go solar.png'
 function Home() {
   return (
@@ -258,122 +260,64 @@ function Home() {
     </section>
     {/**/}
   </div>
+  <section draggable="false" className="container pt-5 border-bottom" data-v-271253ee="">
+      <section className="mb-10">
+  
+    <div className="container text-center mb-6">
+    <h2>Stages of <strong>Installation</strong> of Solar <strong>Power System:</strong></h2>
+			</div>
+     <MDBRow className='row-cols-1 row-cols-md-4 g-2'>
+      <MDBCol>
+        <MDBCard className='h-87'>
+          
+          <MDBCardBody>
+            <MDBCardTitle>1. Select your Solar Package</MDBCardTitle>
+            <MDBCardText>
+            Get in touch and our team of experts will design a property specific package to suit your needs
+            </MDBCardText>
+          </MDBCardBody>
+        </MDBCard>
+      </MDBCol>
+      <MDBCol>
+        <MDBCard className='h-87'>
+          
+          <MDBCardBody>
+            <MDBCardTitle>2. Installation of Solar System</MDBCardTitle>
+            <MDBCardText>
+            Our CEC Accredited Installation teams will take care of the entire installation process from start to finish!            </MDBCardText>
+          </MDBCardBody>
+        </MDBCard>
+      </MDBCol>
+      <MDBCol>
+        <MDBCard className='h-87'>
+          
+          <MDBCardBody>
+            <MDBCardTitle>3. Grid Connection with Electricity Provider</MDBCardTitle>
+            <MDBCardText>
+            Our team will generate and submit all required paperwork to your electricity provider to get you connected to the grid and ready to start saving!                      </MDBCardText>
+          </MDBCardBody>
+        </MDBCard>
+      </MDBCol>
+      <MDBCol>
+        <MDBCard className='h-87'>
+          
+          <MDBCardBody>
+            <MDBCardTitle>4. Enjoy savings!</MDBCardTitle>
+            <MDBCardText>
+            Sit back relax and watch your electricity bill go down                         </MDBCardText>
+          </MDBCardBody>
+        </MDBCard>
+      </MDBCol>
+     
+    </MDBRow>
+ </section>
+ </section>
   <div data-draggable="true" className="" style={{ position: "relative" }}>
     {/**/}
     {/**/}
-    <section draggable="false" className="container pt-5" data-v-271253ee="">
+    <section draggable="false" className="container pt-5 border-bottom " data-v-271253ee="">
       <section className="mb-10">
-        <div className="row">
-          <div className="col-md-6 mb-4 mb-md-0">
-            <h2 className="fw-bold mb-4">Contact us</h2>
-            <p className="text-muted mb-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Laudantium, modi accusantium ipsum corporis quia asperiores
-              dolorem nisi corrupti eveniet dolores ad maiores repellendus enim
-              autem omnis fugiat perspiciatis? Ad, veritatis.
-            </p>
-            <p className="text-muted mb-2">New York, 94126, United States</p>
-            <p className="text-muted mb-2">+ 01 234 567 89</p>
-            <p className="text-muted mb-2">info@gmail.com</p>
-          </div>
-          <div className="col-md-6 mb-4 mb-md-0">
-            <form>
-              {" "}
-              {/* Name input */}
-              <div className="form-outline mb-4">
-                {" "}
-                <input
-                  type="text"
-                  id="form4Example1"
-                  className="form-control"
-                />{" "}
-                <label
-                  className="form-label"
-                  htmlFor="form4Example1"
-                  style={{ marginLeft: 0 }}
-                >
-                  Name
-                </label>
-                <div className="form-notch">
-                  <div className="form-notch-leading" style={{ width: 9 }} />
-                  <div
-                    className="form-notch-middle"
-                    style={{ width: "42.4px" }}
-                  />
-                  <div className="form-notch-trailing" />
-                </div>
-              </div>{" "}
-              {/* Email input */}
-              <div className="form-outline mb-4">
-                {" "}
-                <input
-                  type="email"
-                  id="form4Example2"
-                  className="form-control"
-                />{" "}
-                <label
-                  className="form-label"
-                  htmlFor="form4Example2"
-                  style={{ marginLeft: 0 }}
-                >
-                  Email address
-                </label>
-                <div className="form-notch">
-                  <div className="form-notch-leading" style={{ width: 9 }} />
-                  <div
-                    className="form-notch-middle"
-                    style={{ width: "87.2px" }}
-                  />
-                  <div className="form-notch-trailing" />
-                </div>
-              </div>{" "}
-              {/* Message input */}
-              <div className="form-outline mb-4">
-                {" "}
-                <textarea
-                  className="form-control"
-                  id="form4Example3"
-                  rows={4}
-                  defaultValue={""}
-                />
-                <label
-                  className="form-label"
-                  htmlFor="form4Example3"
-                  style={{ marginLeft: 0 }}
-                >
-                  Message
-                </label>
-                <div className="form-notch">
-                  <div className="form-notch-leading" style={{ width: 9 }} />
-                  <div className="form-notch-middle" style={{ width: 60 }} />
-                  <div className="form-notch-trailing" />
-                </div>
-              </div>{" "}
-              {/* Checkbox */}
-              <div className="form-check d-flex justify-content-center mb-4">
-                {" "}
-                <input
-                  className="form-check-input me-2"
-                  type="checkbox"
-                  defaultValue=""
-                  id="form4Example4"
-                  defaultChecked=""
-                />{" "}
-                <label className="form-check-label" htmlFor="form4Example4">
-                  Send me a copy of this message
-                </label>{" "}
-              </div>{" "}
-              {/* Submit button */}{" "}
-              <button
-                type="submit"
-                className="btn    btn-primary btn-block mb-4"
-                aria-controls="#picker-editor"
-              >
-                Send
-              </button>
-            </form>
-          </div>
-        </div>
+       <Contacts/>
       </section>
     </section>
     {/**/}
@@ -557,7 +501,7 @@ function Home() {
                 aria-controls="flush-collapseOne"
               >
                 {" "}
-                <strong>Anim pariatur cliche reprehenderit?</strong>{" "}
+                <strong>How can solar save me money?</strong>{" "}
               </button>
             </h2>
             <div
@@ -656,6 +600,114 @@ function Home() {
     </section>
     {/**/}
   </div>
+  <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
+      <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
+           </section>
+
+      <section className=''>
+        <MDBContainer className='text-center text-md-start mt-5'>
+          <MDBRow className='mt-3'>
+            <MDBCol md='3' lg='4' xl='3' className='mx-auto mb-4'>
+              <h6 className='text-uppercase fw-bold mb-4'>
+              <img
+            src="/goSolar.png"
+            height={40}
+            alt="MDB Logo"
+            loading="lazy"
+          />
+                {/* <MDBIcon color='secondary' icon={goSolar} className='me-3' /> */}
+                
+              </h6>
+              <p>
+              Our service remains unparalleled in the industry and we strive to deliver the best possible outcomes for our customers. We partner with only the most trusted and reputable companies to provide cutting edge solutions to our customers
+              </p>
+              <MDBBtn tag='a' color='none' className='m-1 text-reset' style={{ color: '#3b5998' }}>
+        <MDBIcon fab icon='facebook-f' size='lg' />
+      </MDBBtn>
+
+      <MDBBtn tag='a' color='none' className='m-1 text-reset' style={{ color: '#55acee' }}>
+        <MDBIcon fab icon='twitter' size='lg' />
+      </MDBBtn>
+
+      <MDBBtn tag='a' color='none' className='m-1 text-reset' style={{ color: '#dd4b39' }}>
+        <MDBIcon fab icon='google' size='lg' />
+      </MDBBtn>
+
+      <MDBBtn tag='a' color='none' className='m-1 text-reset' style={{ color: '#ac2bac' }}>
+        <MDBIcon fab icon='instagram' size='lg' />
+      </MDBBtn>
+            </MDBCol>
+
+            <MDBCol md='2' lg='2' xl='2' className='mx-auto mb-4'>
+              <h6 className='text-uppercase fw-bold mb-4'>Solar</h6>
+              <p>
+                <a href='#!' className='text-reset'>
+                  Residential
+                </a>
+              </p>
+              <p>
+                <a href='#!' className='text-reset'>
+                 Commercial
+                </a>
+              </p>
+              <p>
+                <a href='#!' className='text-reset'>
+                  Batteries
+                </a>
+              </p>
+             
+            </MDBCol>
+
+            <MDBCol md='3' lg='2' xl='2' className='mx-auto mb-4'>
+              <h6 className='text-uppercase fw-bold mb-4'>Company</h6>
+              <p>
+                <a href='#!' className='text-reset'>
+                 Products
+                </a>
+              </p>
+              <p>
+                <a href='#!' className='text-reset'>
+                FAQs
+                </a>
+              </p>
+              <p>
+                <a href='#!' className='text-reset'>
+                  Contact Us
+                </a>
+              </p>
+              <p>
+                <a href='#!' className='text-reset'>
+                  Help
+                </a>
+              </p>
+            </MDBCol>
+
+            <MDBCol md='4' lg='3' xl='3' className='mx-auto mb-md-0 mb-4'>
+              <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
+              <p>
+                <MDBIcon color='secondary' icon='home' className='me-2' />
+                New York, NY 10012, US
+              </p>
+              <p>
+                <MDBIcon color='secondary' icon='envelope' className='me-3' />
+                info@example.com
+              </p>
+              <p>
+                <MDBIcon color='secondary' icon='phone' className='me-3' /> + 01 234 567 88
+              </p>
+             
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
+      </section>
+
+      <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
+        © 2023 Copyright:
+        <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
+         goSolar.com
+        </a>
+      </div>
+    </MDBFooter>
 </div>
 
   </>

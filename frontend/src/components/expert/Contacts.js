@@ -66,10 +66,10 @@ const Contacts = () => {
 
   return (<>
 <div className="text-center">
-<h1 className=" display-3 fw-bold ls-tight px-3" style={{color: 'hsl(218, 81%, 95%)'}}>
+<h4 className=" display-1 fw-bold ls-tight px-3" style={{color: 'hsl(218, 81%, 95%)'}}>
   Have Some Question? <br />
     {/* <span style={{color: 'hsl(218, 81%, 75%)'}}>for your business</span> */}
-  </h1>
+  </h4>
   <p className='px-3 text-center' style={{color: 'hsl(218, 81%, 85%)'}}>
            Thank you for your interest in out services. Please fill out the form below<br/> and we will get back yo you promptly regarding your request.
           </p>
@@ -80,23 +80,25 @@ const Contacts = () => {
 
         <MDBCol md='6' className='text-center text-md-start d-flex flex-column justify-content-center'>
 
-        <img src={ContactImg} alt="" className='justify-content-center' style={{ maxWidth: '40rem' }} />
-<div className="text-center">
+        <img src={ContactImg} alt="" className=' justify-content-center' width={600} height={400}  />
+<div className="me-5 d-none d-lg-block justify-content-center">
     
-<h3>Get In Touch</h3>
+<h4>Get In Touch</h4>
             <hr />
-<i class="fa-sharp fa-light fa-circle-location-arrow"></i>    
-<i class="fa-solid fa-phone">+91 3678467834</i> <br />
-<i class="fa-solid fa-envelope ">hello@demoemail.com</i>    <br />   
-<i class="fa-sharp fa-solid fa-location-dot">931 Abia Martin Drive, PA Pennsylania-62465</i>
+            <div className=" pr-5 ">
+<span className=''><i class="fa-solid fa-phone me-4"   >&nbsp;&nbsp;&nbsp;+91 3678467834</i></span> <br />
+<i class="fa-solid fa-envelope ">&nbsp;&nbsp;&nbsp; hello@demo.com</i>    <br />   
+<i class="fa-sharp fa-solid fa-location-dot">&nbsp;&nbsp;&nbsp;931 Abia Martin Drive, PA Pennsylania-62465</i>
 </div>
+</div>
+
 </MDBCol>
         <MDBCol md='6' className='position-relative'>
 
           <div id="radius-shape-1" className="position-absolute rounded-circle shadow-5-strong"></div>
           <div id="radius-shape-2" className="position-absolute shadow-5-strong"></div>
 
-          <MDBCard className='my-5 bg-glass'>
+          <MDBCard className='my-1 bg-glass'>
             <MDBCardBody className='p-5'>
 <form onSubmit={Contact.handleSubmit}>
     

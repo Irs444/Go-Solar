@@ -3,6 +3,8 @@ import React from 'react';
 import {useFormik} from "formik";
 import Swal from 'sweetalert2';
 import solar from '../../imgs/solar.jpg'
+import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
+import { Link } from 'react-router-dom';
 const Login = () => {
 
 
@@ -60,21 +62,7 @@ const Login = () => {
       <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1 ">
 		<div className='border border-primary rounded-3 p-4'>
         <form onSubmit={loginForm.handleSubmit}>
-          <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-            <p className="lead fw-normal mb-0 me-3">Sign in with</p>
-            <button type="button" className="btn btn-primary btn-floating mx-1">
-              <i className="fab fa-facebook-f" />
-            </button>
-            <button type="button" className="btn btn-primary btn-floating mx-1">
-              <i className="fab fa-twitter" />
-            </button>
-            <button type="button" className="btn btn-primary btn-floating mx-1">
-              <i className="fab fa-linkedin-in" />
-            </button>
-          </div>
-          <div className="divider d-flex align-items-center my-4">
-            <p className="text-center fw-bold mx-3 mb-0">Or</p>
-          </div>
+     
           {/* Email input */}
           <div className="  mb-4">
             <label className="form-label" htmlFor="form3Example3">
@@ -131,14 +119,36 @@ const Login = () => {
             </button>
             <p className="small fw-bold mt-2 pt-1 mb-0">
               Don't have an account?{" "}
-              <a href="#!" className="link-primary">
-                Register
-              </a>
+              <Link to="/main/signup">Register</Link>
             </p>
           </div>
         </form>
+        <div className="divider d-flex align-items-center my-4">
+            <p className="text-center fw-bold mx-4 mb-0">Or</p>
+          </div>
+        <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+        
+            <p className="lead fw-normal mb-0 me-3">Sign in with</p>
+           
+            <MDBBtn className='m-1' floating style={{ backgroundColor: '#3b5998' }} href='#'>
+        <MDBIcon fab icon='facebook-f' />
+      </MDBBtn>
+      <MDBBtn className='m-1' floating  style={{ backgroundColor: '#dd4b39' }} href='#'>
+        <MDBIcon fab icon='google' />
+      </MDBBtn>
+
+      <MDBBtn className='m-1' floating style={{ backgroundColor: '#ac2bac' }} href='#'>
+        <MDBIcon fab icon='instagram' />
+      </MDBBtn>
+      <MDBBtn className='m-1' floating style={{ backgroundColor: '#55acee' }} href='#'>
+        <MDBIcon fab icon='twitter' />
+      </MDBBtn>
+          </div>
+         
 		</div>
+    
       </div>
+      
     </div>
   </div>
  
