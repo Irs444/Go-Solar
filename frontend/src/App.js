@@ -22,16 +22,21 @@ import Contacts from './components/expert/Contacts';
 import ListEquipment from './components/main/ListEquipment';
 import ExpertChat from './components/expert/ExpertChat';
 import CheckoutPage from './components/user/CheckoutPage';
-import SellerAuth from './auth/SellerAuth';
+import Detail from './components/main/Detail';
+import SellerAuth from './auth/SelllerAuth';
+import { ProductProvider } from './context/ProductContext';
+import Cart from './components/user/Cart';
 
 function App() {
   return (
     <BrowserRouter>
+    
+    <ProductProvider>
 
       <Routes>
         <Route path="/" element={<Navigate to="/main/home" />} />
         <Route path="main" element={<Main />} >
-
+  <Route path='details/:id' element={<Detail/>}/>
           <Route path="signup" element={<Signup />} />
           <Route path="Login" element={<Login />} />
           <Route path="Home" element={<Home />} />
@@ -56,6 +61,7 @@ function App() {
           <Route path="ManageOrders" element={<ManageOrders />} />
           <Route path="UserProfile" element={<UserProfile />} />
           <Route path="CheckoutPage" element={<CheckoutPage />} />
+          <Route path="cart" element={<Cart />} />
 
         </Route>
         <Route path="Expert" element={<Expert/>} >
@@ -65,6 +71,8 @@ function App() {
 
         </Route>
       </Routes>
+
+      </ProductProvider>
 
     </BrowserRouter>
   )

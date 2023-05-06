@@ -48,6 +48,11 @@ function Navbar() {
               UserProfile
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/user/cart">
+              Cart
+            </NavLink>
+          </li>
         </ul>
         {/* Left links */}
       </div>
