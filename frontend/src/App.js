@@ -23,7 +23,7 @@ import ListEquipment from './components/main/ListEquipment';
 import ExpertChat from './components/expert/ExpertChat';
 import CheckoutPage from './components/user/CheckoutPage';
 import Detail from './components/main/Detail';
-import SellerAuth from './auth/SelllerAuth';
+import SellerAuth from './auth/SellerAuth';
 import { ProductProvider } from './context/ProductContext';
 import Cart from './components/user/Cart';
 
