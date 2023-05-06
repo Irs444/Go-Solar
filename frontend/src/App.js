@@ -22,6 +22,7 @@ import Contacts from './components/expert/Contacts';
 import ListEquipment from './components/main/ListEquipment';
 import ExpertChat from './components/expert/ExpertChat';
 import CheckoutPage from './components/user/CheckoutPage';
+import Detail from './components/main/Detail';
 
 function App() {
   return (
