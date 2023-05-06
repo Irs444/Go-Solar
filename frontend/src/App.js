@@ -20,8 +20,8 @@ import UserProfile from './components/user/UserProfile';
 import Expert from './components/expert';
 import Contacts from './components/expert/Contacts';
 import ListEquipment from './components/main/ListEquipment';
-import SelllerAuth from './auth/SelllerAuth';
-import Detail from './components/main/Detail';
+import ExpertChat from './components/expert/ExpertChat';
+import CheckoutPage from './components/user/CheckoutPage';
 
 function App() {
   return (
@@ -54,11 +54,13 @@ function App() {
 
           <Route path="ManageOrders" element={<ManageOrders />} />
           <Route path="UserProfile" element={<UserProfile />} />
+          <Route path="CheckoutPage" element={<CheckoutPage />} />
 
         </Route>
         <Route path="Expert" element={<Expert/>} >
 
           <Route path="Contacts" element={<Contacts />} />
+          <Route path="ExpertChat" element={<ExpertChat />} />
 
         </Route>
       </Routes>

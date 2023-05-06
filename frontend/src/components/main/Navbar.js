@@ -40,7 +40,7 @@ function Navbar() {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/main/home">
+            <NavLink className="nav-link" to="/seller/ManageEquipment">
              Products
             </NavLink>
           </li>
@@ -66,13 +66,15 @@ function Navbar() {
                   Seller
                 </MDBDropdownToggle>
                 <MDBDropdownMenu>
-                  <MDBDropdownItem link> <Link className="nav-link" to="/main/SellerLogin">
-            Login
+                  <MDBDropdownItem link><Link className="nav-link" to="/main/SellerLogin">
+              Login
             </Link></MDBDropdownItem>
-                  <MDBDropdownItem link> <Link className="nav-link" to="/main/SellerSignup">
-            Become a Seller
+                  <MDBDropdownItem link><Link className="nav-link" to="/main/SellerSignup">
+              Become a Seller
             </Link></MDBDropdownItem>
-                  {/* <MDBDropdownItem link>Something else here</MDBDropdownItem> */}
+                  {/* <MDBDropdownItem link><NavLink className="nav-link" to="/main/login">
+              Login
+            </NavLink></MDBDropdownItem> */}
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavbarItem>

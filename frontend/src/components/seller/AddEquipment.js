@@ -52,7 +52,7 @@ const AddEquipment = () => {
       title : '',
       description : '',
       price : '',
-      seller : currentUser._id,
+      // seller : currentUser._id,
       category : '',
       image : '',
     },

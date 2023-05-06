@@ -271,9 +271,8 @@ function Home() {
     <h2>Stages of <strong>Installation</strong> of Solar <strong>Power System:</strong></h2>
 			</div>
      <MDBRow className='row-cols-1 row-cols-md-4 g-2'>
-      <MDBCol className=''>
-      <MDBCardImage className='h-50' src={First} alt='...' position='top' />
-        <MDBCard className='h-75'   >
+      <MDBCol>
+        <MDBCard className='h-100' >
           
           <MDBCardBody className='h-75'>
             <MDBCardTitle>1. Select your Solar Package</MDBCardTitle>
@@ -295,7 +294,7 @@ function Home() {
         </MDBCard>
       </MDBCol>
       <MDBCol>
-        <MDBCard className='h-75'>
+        <MDBCard className='h-100' >
           
           <MDBCardBody>
             <div style={{backgroundImage: 'url("/Third.jpg")', height: '10rem', backgroundSize: 'cover'}}></div>
@@ -307,13 +306,12 @@ function Home() {
         </MDBCard>
       </MDBCol>
       <MDBCol>
-        <MDBCard className='h-75'>
+        <MDBCard className='h-100' >
           
           <MDBCardBody>
           <MDBCardImage  src={Fourth} alt='...' position='top' style={{height:"50rem"}} />
             <MDBCardTitle>4. Enjoy savings!</MDBCardTitle>
-            <MDBCardText>
-            Sit back relax and watch your electricity bill go down                         </MDBCardText>
+            <MDBCardText>Sit back relax and watch your electricity bill go down   </MDBCardText>
           </MDBCardBody>
         </MDBCard>
       </MDBCol>
