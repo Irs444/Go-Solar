@@ -1,8 +1,12 @@
 import { MDBDropdown, MDBDropdownItem, MDBDropdownMenu, MDBDropdownToggle, MDBNavbarItem } from 'mdb-react-ui-kit'
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import useProductContext from '../../context/ProductContext'
 
 function Navbar() {
+
+  const {getCartItemsCount} = useProductContext();
+
   return (
     <>
   {/* Navbar */}
@@ -59,6 +63,11 @@ function Navbar() {
               Contact Us
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/user/cart">
+              Cart
+            </NavLink>
+          </li>
        
         <MDBNavbarItem>
               <MDBDropdown>
@@ -78,6 +87,7 @@ function Navbar() {
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavbarItem>
+            <h1>{getCartItemsCount()}</h1>
             </ul>
         {/* Left links */}
       </div>

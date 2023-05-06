@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useStoreContext from "./StoreContext";
+import useProductContext from "../../context/ProductContext";
 
 const Cart = () => {
   const {
@@ -10,7 +10,7 @@ const Cart = () => {
     isInCart,
     getCartTotal,
     getCartItemsCount,
-  } = useStoreContext();
+  } = useProductContext();
 
   const displayCartItems = () => {
     if (getCartItemsCount() === 0) return <p>Cart is empty</p>;

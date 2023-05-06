@@ -9,11 +9,15 @@ import {
     MDBCardImage,
     MDBIcon,
 } from "mdb-react-ui-kit";
+import useProductContext from '../../context/ProductContext';
+import { Link } from 'react-router-dom';
 const ListEquipment = () => {
 
     const [equipmentList, setEquipmentList] = useState([]);
     const [masterList, setMasterList] = useState([]);
     const { apiUrl } = app_config;
+
+    const {addItemToCart} = useProductContext();
 
     const fetchEquipmentData = async () => {
         const res = await fetch(apiUrl + '/equipment/getall');
@@ -33,11 +37,11 @@ const ListEquipment = () => {
 
     return (
         <div>
-            <MDBContainer fluid className="my-5">
+            <MDBContainer className="my-5">
                 <MDBRow>
                     {
                         equipmentList.map((equipment) => (
-                            <MDBCol md="12" lg="4" className="mb-4 mb-lg-0">
+                            <MDBCol md="12" lg="4" className="mb-4 mb-lg-5">
                                 <MDBCard>
                                     <div className="d-flex justify-content-between p-3">
                                         <p className="lead mb-0">Today's Combo Offer</p>
@@ -82,6 +86,8 @@ const ListEquipment = () => {
                                                 <MDBIcon fas icon="star" />
                                             </div>
                                         </div>
+                                        <button onClick={e => addItemToCart(equipment)}>Add to Cart</button>
+                                        <Link className='btn btn-primary' to={'/main/details/'+equipment._id}>View Details</Link>
                                     </MDBCardBody>
                                 </MDBCard>
                             </MDBCol>
