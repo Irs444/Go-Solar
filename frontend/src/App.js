@@ -38,7 +38,7 @@ function App() {
           <Route path="SellerSignUp" element={<SellerSignUp />} />
           <Route path="ListEquipment" element={<ListEquipment />} />
         </Route>
-        <Route path="Seller" element={<Seller />} >
+        <Route path="Seller" element={ <SelllerAuth> <Seller /> </SelllerAuth> } >
 
           <Route path="ManageEquipment" element={<ManageEquipment />} />
           <Route path="AddEquipment" element={<AddEquipment />} />
