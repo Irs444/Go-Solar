@@ -39,12 +39,12 @@ function Navbar() {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/addequipment">
+            <NavLink className="nav-link" to="/AddEquipment">
               AddEquipment
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/manageequipment">
+            <NavLink className="nav-link" to="/ManageEquipment">
               ManageEquipment
             </NavLink>
           </li>

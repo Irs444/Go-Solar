@@ -268,7 +268,7 @@ function Home() {
 			</div>
      <MDBRow className='row-cols-1 row-cols-md-4 g-2'>
       <MDBCol>
-        <MDBCard className='h-87'>
+        <MDBCard className='h-100' style={{}}>
           
           <MDBCardBody>
             <MDBCardTitle>1. Select your Solar Package</MDBCardTitle>
@@ -279,7 +279,7 @@ function Home() {
         </MDBCard>
       </MDBCol>
       <MDBCol>
-        <MDBCard className='h-87'>
+        <MDBCard className='h-100' style={{}}>
           
           <MDBCardBody>
             <MDBCardTitle>2. Installation of Solar System</MDBCardTitle>
@@ -289,7 +289,7 @@ function Home() {
         </MDBCard>
       </MDBCol>
       <MDBCol>
-        <MDBCard className='h-87'>
+        <MDBCard className='h-100' style={{}}>
           
           <MDBCardBody>
             <MDBCardTitle>3. Grid Connection with Electricity Provider</MDBCardTitle>
@@ -299,12 +299,11 @@ function Home() {
         </MDBCard>
       </MDBCol>
       <MDBCol>
-        <MDBCard className='h-87'>
+        <MDBCard className='h-100' >
           
           <MDBCardBody>
             <MDBCardTitle>4. Enjoy savings!</MDBCardTitle>
-            <MDBCardText>
-            Sit back relax and watch your electricity bill go down                         </MDBCardText>
+            <MDBCardText>Sit back relax and watch your electricity bill go down   </MDBCardText>
           </MDBCardBody>
         </MDBCard>
       </MDBCol>

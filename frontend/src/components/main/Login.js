@@ -4,10 +4,10 @@ import {useFormik} from "formik";
 import Swal from 'sweetalert2';
 import solar from '../../imgs/solar.jpg'
 import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const Login = () => {
 
-
+  const navigate = useNavigate();
   
 
 
@@ -27,13 +27,14 @@ const Login = () => {
         },
       });
       console.log(res.status);
-
+      
       if (res.status === 200){
         Swal.fire({
           icon: "success",
           tittle: "nice",
           text: "You have succesfyll login",
         });
+        navigate('/main/ListEquipment');
 
       } else if (res.status === 401){
         Swal.fire({
