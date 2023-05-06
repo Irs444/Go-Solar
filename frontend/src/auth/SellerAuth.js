@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-const SelllerAuth = ({children}) => {
+const SellerAuth = ({children}) => {
 
     const navigate = useNavigate();
   
@@ -20,4 +20,4 @@ const SelllerAuth = ({children}) => {
     }
 }
 
-export default SelllerAuth
+export default SellerAuth

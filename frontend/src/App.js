@@ -22,6 +22,7 @@ import Contacts from './components/expert/Contacts';
 import ListEquipment from './components/main/ListEquipment';
 import ExpertChat from './components/expert/ExpertChat';
 import CheckoutPage from './components/user/CheckoutPage';
+import SellerAuth from './auth/SellerAuth';
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
           <Route path="SellerSignUp" element={<SellerSignUp />} />
           <Route path="ListEquipment" element={<ListEquipment />} />
         </Route>
-        <Route path="Seller" element={ <SelllerAuth> <Seller /> </SelllerAuth> } >
+        <Route path="Seller" element={ <SellerAuth> <Seller /> </SellerAuth> } >
 
           <Route path="ManageEquipment" element={<ManageEquipment />} />
           <Route path="AddEquipment" element={<AddEquipment />} />
