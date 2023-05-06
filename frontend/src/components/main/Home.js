@@ -4,6 +4,10 @@ import './Home.css'
 import Contacts from '../expert/Contacts';
 import goSolar from '../../imgs/goSolar.ico'
 // import Logo from '../../imgs/go solar.png'
+import First from '../../imgs/First.jpg'
+import Second from '../../imgs/Second.jpg'
+// import Third from '../../imgs/Third.jpg'
+import Fourth from '../../imgs/Fourth.jpg'
 function Home() {
   return (
   <>
@@ -267,10 +271,11 @@ function Home() {
     <h2>Stages of <strong>Installation</strong> of Solar <strong>Power System:</strong></h2>
 			</div>
      <MDBRow className='row-cols-1 row-cols-md-4 g-2'>
-      <MDBCol>
-        <MDBCard className='h-87'>
+      <MDBCol className=''>
+      <MDBCardImage className='h-50' src={First} alt='...' position='top' />
+        <MDBCard className='h-75'   >
           
-          <MDBCardBody>
+          <MDBCardBody className='h-75'>
             <MDBCardTitle>1. Select your Solar Package</MDBCardTitle>
             <MDBCardText>
             Get in touch and our team of experts will design a property specific package to suit your needs
@@ -279,7 +284,8 @@ function Home() {
         </MDBCard>
       </MDBCol>
       <MDBCol>
-        <MDBCard className='h-87'>
+      <MDBCardImage className='h-50' src={Second} alt='...' position='top' />
+        <MDBCard className='h-75'>
           
           <MDBCardBody>
             <MDBCardTitle>2. Installation of Solar System</MDBCardTitle>
@@ -289,9 +295,11 @@ function Home() {
         </MDBCard>
       </MDBCol>
       <MDBCol>
-        <MDBCard className='h-87'>
+        <MDBCard className='h-75'>
           
           <MDBCardBody>
+            <div style={{backgroundImage: 'url("/Third.jpg")', height: '10rem', backgroundSize: 'cover'}}></div>
+          {/* <MDBCardImage className='h-50' src={Third} alt='...' position='top' /> */}
             <MDBCardTitle>3. Grid Connection with Electricity Provider</MDBCardTitle>
             <MDBCardText>
             Our team will generate and submit all required paperwork to your electricity provider to get you connected to the grid and ready to start saving!                      </MDBCardText>
@@ -299,9 +307,10 @@ function Home() {
         </MDBCard>
       </MDBCol>
       <MDBCol>
-        <MDBCard className='h-87'>
+        <MDBCard className='h-75'>
           
           <MDBCardBody>
+          <MDBCardImage  src={Fourth} alt='...' position='top' style={{height:"50rem"}} />
             <MDBCardTitle>4. Enjoy savings!</MDBCardTitle>
             <MDBCardText>
             Sit back relax and watch your electricity bill go down                         </MDBCardText>
@@ -709,6 +718,7 @@ function Home() {
       </div>
     </MDBFooter>
 </div>
+
 
   </>
   )
