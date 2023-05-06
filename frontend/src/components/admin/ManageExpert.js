@@ -1,12 +1,9 @@
 import React from 'react'
 
 const ManageExpert = () => {
-
-
   return (
-    <div>
-      </div>
+    <div>ManageExpert</div>
   )
 }
 
-export default ManageExpert;
+export default ManageExpert

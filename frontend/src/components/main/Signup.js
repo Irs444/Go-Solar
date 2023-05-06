@@ -2,7 +2,9 @@ import { useFormik } from 'formik'
 import React from 'react'
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
-
+import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
+import usignup from '../../imgs/usignup.jpg'
+import { Link } from 'react-router-dom';
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
     .min(2, 'Too Short!')
@@ -64,24 +66,14 @@ const Signup = () => {
 
   return (
     <div>
-       <section
-  className="vh-100 bg-image"
-  style={{
-    backgroundImage:
-      'url("https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp")'
-  }}
->
-  <div className="mask d-flex align-items-center h-100 gradient-custom-3">
-    <div className="container h-100">
-      <div className="row d-flex justify-content-center align-items-center h-100">
-        <div className="col-12 col-md-9 col-lg-7 col-xl-6">
-          <div className="card " style={{ borderRadius: 15 }}>
-            <div className="card-body p-5">
-              <h2 className="text-uppercase text-center mb-5">
-                Create an account
-              </h2>
-              <form onSubmit={signupForm.handleSubmit}>
-                <div className=" mb-4">
+		<section className="vh-100 mt-2">
+  <div className="container-fluid h-custom">
+    <div className="row d-flex justify-content-center align-items-center h-100">
+    <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1 ">
+		<div className='border border-dark rounded-3 p-2 '>
+      <h2 className='text-center mb-4'>Create an account</h2>
+    <form onSubmit={signupForm.handleSubmit}>
+                <div className=" mb-2">
                 <label className="form-label" htmlFor="form3Example1cg">
                     Your Name
                   </label>
@@ -96,7 +88,7 @@ const Signup = () => {
                   <span className="text-danger">{signupForm.errors.name}</span>
                  
                 </div>
-                <div className=" mb-4">
+                <div className=" mb-2">
                 <label className="form-label" htmlFor="form3Example3cg">
                     Your Email
                   </label>
@@ -110,7 +102,7 @@ const Signup = () => {
                   />
                           <span className="text-danger">{signupForm.errors.email}</span>
                 </div>
-                <div className=" mb-4">
+                <div className=" mb-2">
                 <label className="form-label" htmlFor="form3Example4cg">
                     Password
                   </label>
@@ -124,7 +116,7 @@ const Signup = () => {
                   />
                           <span className="text-danger">{signupForm.errors.password}</span> 
                 </div>
-                <div className=" mb-4">
+                <div className=" mb-2">
                 <label className="form-label" htmlFor="form3Example4cdg">
                     Repeat your password
                   </label>
@@ -138,7 +130,7 @@ const Signup = () => {
                   />
                            <span className="text-danger">{signupForm.errors.cPassword}</span>
                 </div>
-                <div className="form-check d-flex justify-content-center mb-5">
+                <div className="form-check d-flex justify-content-center mb-3">
                   <input
                     className="form-check-input me-2"
                     type="checkbox"
@@ -152,35 +144,56 @@ const Signup = () => {
                     </a>
                   </label>
                 </div>
-                <div className="d-flex justify-content-center">
+                <div className="d-flex justify-content-center mb-2">
                   <button
                     type="submit"
-                    className="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
+                    className="btn  btn-block btn-lg  text-body"
                     disabled={signupForm.isSubmitting}
+                    style={{backgroundColor:"#CF9FFF"}}
                   >
                     { signupForm.isSubmitting && <span className="spinner-border spinner-border-sm"></span>}
                 &nbsp;&nbsp;
                     
                     Register
                   </button>
+                  
                 </div>
-                <p className="text-center text-muted mt-5 mb-0">
-                  Have already an account?{" "}
-                  <a href="#!" className="fw-bold ">
-                    <u>Login here</u>
-                  </a>
-                </p>
+              <Link to='/main/Login'>
+                <div className="d-flex justify-content-center">
+              <button
+                    type="submit"
+                    className="btn  btn-block btn-lg  text-body"
+                    disabled={signupForm.isSubmitting}
+                    style={{backgroundColor:"#F0F0F0"}}
+                  >
+                  
+                  Sign in
+                  </button>
+                </div>
+              </Link>
+                
               </form>
-            </div>
-          </div>
-        </div>
+    
+		</div>
+    
       </div>
+      <div className="col-md-9 col-lg-6 col-xl-5">
+        <img
+          src={usignup}
+          className="img-fluid"
+          alt="Sample image"
+        />
+          
+      </div>
+     
+      
     </div>
   </div>
+ 
 </section>
 
-
-        </div>
+	</div>
+   
   )
 }
 

@@ -11,19 +11,89 @@ import {
   MDBCard,
   MDBCardBody,
   MDBCardImage,
-
+  
   MDBIcon,
   MDBTextArea,
 
 }
   from 'mdb-react-ui-kit';
+import { useFormik } from 'formik';
+import Swal from 'sweetalert2';
+import app_config from '../../config';
+import { toast}  from 'react-hot-toast';
 
 // import MDBFileupload from 'mdb-react-fileupload';
 const AddEquipment = () => {
+
   const [selectedImage, setSelectedImage] = useState(null);
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('seller')));
+
+    const [selImage, setSelImage] = useState('');
+  
+    const {apiUrl} = app_config;
+  
+    const uploadImage = async (e) => {
+      const file = e.target.files[0];
+      setSelImage(file);
+      const fd = new FormData();
+      fd.append("myfile", file);
+      fetch(apiUrl + "/util/uploadfile", {
+        method: "POST",
+        body: fd,
+      }).then((res) => {
+        if (res.status === 200) {
+          console.log("file uploaded");
+          toast.success("File Uploaded!!");
+        }
+      });
+    }
+  const addequipmentForm = useFormik({
+    initialValues: {
+      title : '',
+      description : '',
+      price : '',
+      // seller : currentUser._id,
+      category : '',
+      image : '',
+    },
+    onSubmit: async (values, {setSubmitting}) => { 
+      // setSubmitting(true);
+      values.image = selImage.name;
+      console.log(values);
+  
+      const res = await fetch('http://localhost:5000/equipment/add',{
+        method: 'POST',
+        body : JSON.stringify(values),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+  
+      console.log(res.status);
+  
+      if(res.status === 200){
+  
+        Swal.fire({
+          icon : 'success',
+          title : 'Nice',
+          text : 'You have successfully registered'
+        })
+      } else {
+        Swal.fire({
+          icon : 'error',
+          title : 'opps!!',
+          text : 'something went worng'
+        })
+      }
+      
+    },
+  
+   });
+ 
+
   return (
     <MDBContainer className="my-5">
-      <h2>Add New Equipment</h2>
+      {/* <h2>Add New Equipment</h2> */}
       <MDBCard >
         <MDBRow className='g-0'>
 
@@ -46,13 +116,12 @@ const AddEquipment = () => {
               <br />
               <br />
 
+                <label htmlFor='upload-image' className="btn btn-outline-dark">Upload Image</label>
               <input
+              hidden
+              id="upload-image"
                 type="file"
-                name="myImage"
-                onChange={(event) => {
-                  console.log(event.target.files[0]);
-                  setSelectedImage(event.target.files[0]);
-                }}
+                onChange={uploadImage}
               />
             </div>
           </MDBCol>
@@ -60,16 +129,25 @@ const AddEquipment = () => {
           <MDBCol md='6'>
             <MDBCardBody className='d-flex flex-column'>
 
-              <form>
+              <form onSubmit={addequipmentForm.handleSubmit}>
 
 
-                <MDBInput wrapperClass='mb-4' id='form6Example3' label='Title' />
-                {/* <MDBInput wrapperClass='mb-4' textarea rows={4} id='form6Example4' label='Description' /> */}
-                <MDBTextArea wrapperClass='mb-4' label='Description' id='textAreaExample' rows={4} />
-                <MDBInput wrapperClass='mb-4' type='number' id='form6Example5' label='Price' />
-                <MDBInput wrapperClass='mb-4' type='tel' id='form6Example6' label='Phone' />
+                <MDBInput wrapperClass='mb-4' id='title' type='title' label='Title' value={addequipmentForm.values.title} onChange={addequipmentForm.handleChange} className="form-control form-control-lg" />
+              
+                <MDBInput wrapperClass='mb-4'  id='description' type='Description' label='Description' value={addequipmentForm.values.description}
+              onChange={addequipmentForm.handleChange} 
+              />
+                
+                <MDBInput wrapperClass='mb-4' type='price' id='price' label='price'  value={addequipmentForm.values.price}
+              onChange={addequipmentForm.handleChange}
+               />
+                <MDBInput wrapperClass='mb-4' type='image' id='image' label='image' value={addequipmentForm.values.image}
+              onChange={addequipmentForm.handleChange}
+              className="form-control form-control-lg" />
 
-                <MDBInput wrapperClass='mb-4' id='form6Example7' label='Category' />
+                <MDBInput wrapperClass='mb-4' id='category'type='Category' label='Category' value={addequipmentForm.values.category}
+              onChange={addequipmentForm.handleChange}
+               />
 
                 {/* <MDBCheckbox
       wrapperClass='d-flex justify-content-center mb-4'
@@ -77,15 +155,15 @@ const AddEquipment = () => {
       label='Create an account?'
       defaultChecked
     /> */}
-                <MDBBtn rounded className='mx-2' color='primary'>
+                <button rounded className='mx-2' color='primary'>
                   Save
-                </MDBBtn>
-                <MDBBtn rounded className='mx-2' color='info'>
+                </button>
+                <button rounded className='mx-2' color='info'>
                   Save & Add Another
-                </MDBBtn>
-                <MDBBtn outline rounded className='text-dark mx-2 ' color='Dark'>
+                </button>
+                <button outline rounded className='text-dark mx-2 ' color='Dark'>
                   Cancel
-                </MDBBtn>
+                </button>
 
               </form>
 
@@ -101,4 +179,5 @@ const AddEquipment = () => {
   )
 }
 
-export default AddEquipment
+export default AddEquipment;
+

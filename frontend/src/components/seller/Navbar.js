@@ -39,13 +39,13 @@ function Navbar() {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/login">
-              Login
+            <NavLink className="nav-link" to="/AddEquipment">
+              AddEquipment
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/signup">
-              Signup
+            <NavLink className="nav-link" to="/ManageEquipment">
+              ManageEquipment
             </NavLink>
           </li>
         </ul>

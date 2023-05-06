@@ -15,6 +15,7 @@ import logo from '../../imgs/logo.jpg'
 import seller from '../../imgs/seller.jpg'
 import Swal from 'sweetalert2';
 import { useFormik } from 'formik';
+import { Link } from 'react-router-dom';
 
 function SellerLogin() {
     
@@ -41,6 +42,10 @@ function SellerLogin() {
           title: "nice",
           text: "You have loggedin successfully",
         });
+
+        const data = await res.json();
+
+        sessionStorage.setItem('seller', JSON.stringify(data));
 
       } else if (res.status === 401){
         Swal.fire({
@@ -84,9 +89,12 @@ function SellerLogin() {
               value={loginForm.values.password}
               onChange={loginForm.handleChange} wrapperClass='mb-4' label='Password'  size="lg"/>
 
-              <MDBBtn className="mb-2 px-5 btn-success" size='lg'>Login</MDBBtn>
-              <a className="small text-muted" style={{color: '#609966'}} href="#!">Forgot password?</a>
-              <p className="mb-3 pb-lg-2" style={{color: '#3c6255'}}> <a href="#!" style={{color: '#609966'}}>Become a seller</a></p>
+              <a className="small text-muted " style={{color: '#609966'}} href="#!">Forgot password?</a>
+              <br/>
+              <button className=" btn mt-2 mb-2 px-5 btn-success btn-lg btn-block" >Login</button>
+              <p className="mb-3 pb-lg-2" style={{color: '#3c6255'}}> <a href="#!" style={{color: '#609966'}}> <Link className="nav-link" to="/main/SellerSignUp">
+            Become a Seller
+            </Link></a></p>
 
               <div className='d-flex flex-row justify-content-start'>
                 <a href="#!" className="small text-muted me-1">Terms of use.</a>

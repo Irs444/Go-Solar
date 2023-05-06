@@ -10,44 +10,65 @@ import SellerSignUp from './components/main/SellerSignUp';
 import Seller from './components/seller';
 import ManageEquipment from './components/seller/ManageEquipment';
 import Admin from './components/admin';
+import AddEquipment from './components/seller/AddEquipment';
 import ManageExpert from './components/admin/ManageExpert';
 import ManageUser from './components/admin/ManageUser';
 import AdminProfile from './components/admin/AdminProfile';
-import AddEquipment from './components/seller/AddEquipment';
+import User from './components/user';
+import ManageOrders from './components/user/ManageOrders';
+import UserProfile from './components/user/UserProfile';
+import Expert from './components/expert';
+import Contacts from './components/expert/Contacts';
+import ListEquipment from './components/main/ListEquipment';
 import ExpertChat from './components/expert/ExpertChat';
-import Try11 from './components/admin/Try11';
-import Try12 from './components/admin/Try12';
-import Try13 from './components/admin/Try13';
-import Sign from './components/admin/Sign';
+import CheckoutPage from './components/user/CheckoutPage';
+import Detail from './components/main/Detail';
+import SellerAuth from './auth/SelllerAuth';
+import { ProductProvider } from './context/ProductContext';
+import Cart from './components/user/Cart';
+
 function App() {
   return (
     <BrowserRouter>
+    
+    <ProductProvider>
 
       <Routes>
         <Route path="/" element={<Navigate to="/main/home" />} />
         <Route path="main" element={<Main />} >
-
+  <Route path='details/:id' element={<Detail/>}/>
           <Route path="signup" element={<Signup />} />
           <Route path="Login" element={<Login />} />
           <Route path="Home" element={<Home />} />
           <Route path="SellerLogin" element={<SellerLogin />} />
           <Route path="SellerSignUp" element={<SellerSignUp />} />
-          <Route path="Seller" element={<Seller />} />
+          <Route path="ListEquipment" element={<ListEquipment />} />
+        </Route>
+        <Route path="Seller" element={ <SellerAuth> <Seller /> </SellerAuth> } >
 
           <Route path="ManageEquipment" element={<ManageEquipment />} />
-          {/* <Route path="Login" element={<Login />} />
-        <Route path="Home" element={<Home />} /> */}
+          <Route path="AddEquipment" element={<AddEquipment />} />
 
         </Route>
+        <Route path="Admin" element={<Admin />} >
 
-        <Route path="admin" element={<Admin />} >
           <Route path="AdminProfile" element={<AdminProfile />} />
           <Route path="ManageExpert" element={<ManageExpert />} />
           <Route path="ManageUser" element={<ManageUser />} />
-          <Route path="Try11" element={<Try11 />} />
-          <Route path="Try12" element={<Try12 />} />
-          <Route path="Try13" element={<Try13 />} />
-          <Route path="Sign" element={<Sign />} />
+        </Route>
+        <Route path="User" element={<User />} >
+
+          <Route path="ManageOrders" element={<ManageOrders />} />
+          <Route path="UserProfile" element={<UserProfile />} />
+          <Route path="CheckoutPage" element={<CheckoutPage />} />
+          <Route path="cart" element={<Cart />} />
+
+        </Route>
+        <Route path="Expert" element={<Expert/>} >
+
+          <Route path="Contacts" element={<Contacts />} />
+          <Route path="ExpertChat" element={<ExpertChat />} />
+
         </Route>
         <Route path="seller" element={<Seller />} >
           
@@ -55,6 +76,8 @@ function App() {
         </Route>
         <Route path="expert" element={<ExpertChat />} />
       </Routes>
+
+      </ProductProvider>
 
     </BrowserRouter>
   )

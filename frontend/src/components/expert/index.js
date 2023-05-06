@@ -1,17 +1,10 @@
-import React from 'react';
+import React from 'react'
 import { Outlet } from 'react-router-dom'
-const Admin = () => {
-    return (
-        <div>
-          
-            <div>
-                <Navbar />
-                <Outlet />
-            </div>
-            
-            
-        </div>
-    )
+
+const Expert= () => {
+  return (
+   <Outlet/>
+  )
 }
 
-export default expert
+export default Expert
