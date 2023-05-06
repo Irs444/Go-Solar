@@ -21,6 +21,7 @@ import Expert from './components/expert';
 import Contacts from './components/expert/Contacts';
 import ListEquipment from './components/main/ListEquipment';
 import SelllerAuth from './auth/SelllerAuth';
+import Detail from './components/main/Detail';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/main/home" />} />
         <Route path="main" element={<Main />} >
-
+  <Route path='detail' element={<Detail/>}/>
           <Route path="signup" element={<Signup />} />
           <Route path="Login" element={<Login />} />
           <Route path="Home" element={<Home />} />
