@@ -47,6 +47,7 @@ const Detail = () => {
             <h4>GENERIC</h4>
             <hr />
             <h6>TERMS AND CONDITIONS</h6>
+            <p>100% </p>
           
             </MDBCardBody>
           </MDBCol>
