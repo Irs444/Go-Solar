@@ -13,8 +13,12 @@ import Admin from './components/admin';
 import ManageExpert from './components/admin/ManageExpert';
 import ManageUser from './components/admin/ManageUser';
 import AdminProfile from './components/admin/AdminProfile';
-import Trying from './components/admin/Trying';
 import AddEquipment from './components/seller/AddEquipment';
+import ExpertChat from './components/expert/ExpertChat';
+import Try11 from './components/admin/Try11';
+import Try12 from './components/admin/Try12';
+import Try13 from './components/admin/Try13';
+import Sign from './components/admin/Sign';
 function App() {
   return (
     <BrowserRouter>
@@ -40,9 +44,16 @@ function App() {
           <Route path="AdminProfile" element={<AdminProfile />} />
           <Route path="ManageExpert" element={<ManageExpert />} />
           <Route path="ManageUser" element={<ManageUser />} />
-          <Route path="trying" element={<Trying />} />
-
+          <Route path="Try11" element={<Try11 />} />
+          <Route path="Try12" element={<Try12 />} />
+          <Route path="Try13" element={<Try13 />} />
+          <Route path="Sign" element={<Sign />} />
         </Route>
+        <Route path="seller" element={<Seller />} >
+          
+          <Route path="AddEquipment" element={<AddEquipment />} />
+        </Route>
+        <Route path="expert" element={<ExpertChat />} />
       </Routes>
 
     </BrowserRouter>
