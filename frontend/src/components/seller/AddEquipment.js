@@ -52,9 +52,10 @@ const AddEquipment = () => {
       title : '',
       description : '',
       price : '',
-      // seller : currentUser._id,
+      seller : currentUser._id,
       category : '',
       image : '',
+      createdAt: new Date()
     },
     onSubmit: async (values, {setSubmitting}) => { 
       // setSubmitting(true);
@@ -92,10 +93,10 @@ const AddEquipment = () => {
  
 
   return (
-    <MDBContainer className="my-5">
+    <MDBContainer className="my-5" >
       {/* <h2>Add New Equipment</h2> */}
       <MDBCard >
-        <MDBRow className='g-0'>
+        <MDBRow className='g-0' >
 
           <MDBCol md='6'>
             <div>
@@ -116,7 +117,7 @@ const AddEquipment = () => {
               <br />
               <br />
 
-                <label htmlFor='upload-image' className="btn btn-outline-dark">Upload Image</label>
+                <label htmlFor='upload-image' className="btn btn-primary" style={{margin:20}}>Upload Image</label>
               <input
               hidden
               id="upload-image"
@@ -141,9 +142,9 @@ const AddEquipment = () => {
                 <MDBInput wrapperClass='mb-4' type='price' id='price' label='price'  value={addequipmentForm.values.price}
               onChange={addequipmentForm.handleChange}
                />
-                <MDBInput wrapperClass='mb-4' type='image' id='image' label='image' value={addequipmentForm.values.image}
+                {/* <MDBInput wrapperClass='mb-4' type='image' id='image' label='image' value={addequipmentForm.values.image}
               onChange={addequipmentForm.handleChange}
-              className="form-control form-control-lg" />
+              className="form-control form-control-lg" /> */}
 
                 <MDBInput wrapperClass='mb-4' id='category'type='Category' label='Category' value={addequipmentForm.values.category}
               onChange={addequipmentForm.handleChange}
@@ -155,13 +156,13 @@ const AddEquipment = () => {
       label='Create an account?'
       defaultChecked
     /> */}
-                <button rounded className='mx-2' color='primary'>
+                <button className='btn btn-primary' style={{margin:10}}>
                   Save
                 </button>
-                <button rounded className='mx-2' color='info'>
+                <button className='btn btn-primary' style={{margin:10}}>
                   Save & Add Another
                 </button>
-                <button outline rounded className='text-dark mx-2 ' color='Dark'>
+                <button className='btn btn-primary' style={{margin:10}}>
                   Cancel
                 </button>
 

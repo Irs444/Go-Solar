@@ -87,8 +87,8 @@ const Contacts = () => {
             <hr />
             <div className=" pr-5 ">
               <span className=''><i class="fa-solid fa-phone me-4"   >&nbsp;&nbsp;&nbsp;+91 3678467834</i></span> <br />
-              <i class="fa-solid fa-envelope ">&nbsp;&nbsp;&nbsp; hello@demo.com</i>    <br />
-              <i class="fa-sharp fa-solid fa-location-dot">&nbsp;&nbsp;&nbsp;931 Abia Martin Drive, PA Pennsylania-62465</i>
+              <i class="fa-solid fa-envelope ">&nbsp;&nbsp;&nbsp; </i>hello@demo.com    <br />
+              <i class="fa-sharp fa-solid fa-location-dot">&nbsp;&nbsp;&nbsp;</i>931 Abia Martin Drive, PA Pennsylania-62465
             </div>
           </div>
 

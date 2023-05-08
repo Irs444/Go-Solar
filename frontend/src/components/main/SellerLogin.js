@@ -15,7 +15,7 @@ import logo from '../../imgs/logo.jpg'
 import seller from '../../imgs/seller.jpg'
 import Swal from 'sweetalert2';
 import { useFormik } from 'formik';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 function SellerLogin() {
     
@@ -46,6 +46,7 @@ function SellerLogin() {
         const data = await res.json();
 
         sessionStorage.setItem('seller', JSON.stringify(data));
+        navigate("/seller/ManageEquipment");
 
       } else if (res.status === 401){
         Swal.fire({
@@ -58,6 +59,8 @@ function SellerLogin() {
 
     },
   });
+  const navigate = useNavigate();
+  
   return (
     <MDBContainer className="my-1">
 
@@ -91,7 +94,7 @@ function SellerLogin() {
 
               <a className="small text-muted " style={{color: '#609966'}} href="#!">Forgot password?</a>
               <br/>
-              <button className=" btn mt-2 mb-2 px-5 btn-success btn-lg btn-block" >Login</button>
+              <button className=" btn mt-2 mb-2 px-5 btn-success btn-lg btn-block"  >Login</button>
               <p className="mb-3 pb-lg-2" style={{color: '#3c6255'}}> <a href="#!" style={{color: '#609966'}}> <Link className="nav-link" to="/main/SellerSignUp">
             Become a Seller
             </Link></a></p>
