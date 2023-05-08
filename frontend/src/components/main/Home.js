@@ -272,8 +272,8 @@ function Home() {
 			</div>
      <MDBRow className='row-cols-1 row-cols-md-4 g-2'>
       <MDBCol>
-        <MDBCard className='h-100' >
-          
+        <MDBCard className='h-100' style={{height:"10px"}} >
+        <MDBCardImage className='h-50' src={First } alt='...' position='top' />
           <MDBCardBody className='h-75'>
             <MDBCardTitle>1. Select your Solar Package</MDBCardTitle>
             <MDBCardText>

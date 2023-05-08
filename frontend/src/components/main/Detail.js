@@ -34,7 +34,7 @@ const Detail = () => {
     useEffect(() => {
       getEquipmentData();
     }, [])
-    
+    // console.log(equipmentData);
 
     return (
         <MDBContainer className="my-5">
@@ -46,7 +46,7 @@ const Detail = () => {
                         <MDBCol md='6'>
                             <MDBCardImage src={apiUrl+'/'+equipmentData.image} alt="login form" className='rounded-start w-100' />
                         </MDBCol>
-    
+      
                         <MDBCol md='6'>
                             <MDBCardBody className='d-flex flex-column'>
     
@@ -55,9 +55,9 @@ const Detail = () => {
                                     <span className="h1 fw-bold mb-0">{equipmentData.title}</span>
                                 </div>
     
-                                <h5 className="fw-normal my-4 pb-3" style={{ letterSpacing: '1px' }}>Solar PCU</h5>
+                                <h5 className="fw-normal my-4 pb-3" style={{ letterSpacing: '1px' }}>{equipmentData.description}</h5>
     
-                                <p className="mb-5 pb-lg-2" style={{ color: '#393f81' }}>₹18,2000.00 </p>
+                                <p className="mb-5 pb-lg-2" style={{ color: '#393f81' }}>₹{equipmentData.price}</p>
                                 <MDBInput label='Quantity' id='typeNumber' type='number' />
                                 <a className="small text-muted" href="#!">Excluding Sales Tax | Free Shipping</a>
     
