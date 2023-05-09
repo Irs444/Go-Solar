@@ -58,13 +58,13 @@ export default function ManageEquipment() {
 
 
       <div className="mb-5 ">
-        <h1 className='text-center' style={{ display: "inline-block" }}>Manage Equipment</h1>
+        <h1 className='text-center ' style={{ display: "inline-block" }}>Manage Equipment</h1>
         <button className="btn btn-primary " onClick={toggleShow} style={{ float: 'right', margin: 20 }}>Add Equipment</button>
         <MDBModal show={basicModal} setShow={setBasicModal} tabIndex="-1">
-          <MDBModalDialog>
-            <MDBModalContent>
+          <MDBModalDialog >
+            <MDBModalContent style={{width:"800px"}}>
               <MDBModalHeader>
-                <MDBModalTitle>Add New Equipment</MDBModalTitle>
+                <MDBModalTitle >Add New Equipment</MDBModalTitle>
                 <button
                   className="btn-close"
                   color="none"
@@ -75,26 +75,25 @@ export default function ManageEquipment() {
                 <AddEquipment />
               </MDBModalBody>
 
-              <MDBModalFooter>
-                <button className="btn btn-primary" onClick={toggleShow}>
+              {/* <MDBModalFooter> */}
+                {/* <button className="btn btn-primary" onClick={toggleShow}>
                   Close
                 </button>
-                <button className="btn btn-primary">Save changes</button>
-              </MDBModalFooter>
+                <button className="btn btn-primary">Save changes</button> */}
+              {/* </MDBModalFooter> */}
             </MDBModalContent>
           </MDBModalDialog>
         </MDBModal>
       </div>
       <MDBContainer className="my-1">
         <MDBInputGroup className="mb-3 mt-2">
-          <input label='Search Name' onChange={applySearch} className="form-control form-control-lg" />
+        <MDBInput label='Search Title' onChange={applySearch} id='typeText' type='text' />
+          {/* <input label='Search Name' onChange={applySearch} className="form-control form-control-lg" /> */}
           {/* <MDBBtn rippleColor='dark'>
         <MDBIcon icon='search' />
       </MDBBtn> */}
         </MDBInputGroup>
         <MDBCard>
-
-          {/* <br /> */}
 
           <MDBTable align='middle'>
 
