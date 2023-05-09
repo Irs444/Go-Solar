@@ -2,11 +2,11 @@ import { MDBDropdown, MDBDropdownItem, MDBDropdownMenu, MDBDropdownToggle, MDBNa
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import useProductContext from '../../context/ProductContext'
-
+import './Navbar.css'
 function Navbar() {
 
   const { getCartItemsCount } = useProductContext();
-
+ 
   return (
     <>
       {/* Navbar */}
@@ -43,8 +43,12 @@ function Navbar() {
                   Home
                 </NavLink>
               </li>
-
               <li className="nav-item">
+                <NavLink className="nav-link" to="/main/ListEquipment">
+                  Product
+                </NavLink>
+              </li>
+              {/* <li className="nav-item">
                 <NavLink className="nav-link" to="/main/login">
                   Login
                 </NavLink>
@@ -53,7 +57,7 @@ function Navbar() {
                 <NavLink className="nav-link" to="/main/signup">
                   Signup
                 </NavLink>
-              </li>
+              </li> */}
 
 
 
@@ -76,22 +80,18 @@ function Navbar() {
                   </MDBDropdownMenu>
                 </MDBDropdown>
               </MDBNavbarItem>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/main/ListEquipment">
-                  Product
-                </NavLink>
-              </li>
+              
               <li className="nav-item">
                 <NavLink className="nav-link" to="/expert/Contacts">
                   Contact Us
                 </NavLink>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink className="nav-link" to="/user/cart">
                   Cart
                 </NavLink>
               </li>
-              <h1>{getCartItemsCount()}</h1>
+              */}
             </ul>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
@@ -107,7 +107,24 @@ function Navbar() {
             </ul>
             {/* Left links */}
           </div>
+          <div className="d-flex align-items-center ">
+     
+    
+                <NavLink  type="button" className="btn rounded-pill btn-outline-warning nav-link me-2"  to="/main/login">
+                  Login
+                </NavLink>
+             
+                <NavLink role='button' className="btn  btn-custom rounded-pill nav-link btn-lg btn-block" to="/main/signup" >
+                  Signup
+                </NavLink>
+            
 
+ 
+      
+     
+     
+    </div>
+   
           {/* Right elements */}
         </div>
         {/* Container wrapper */}

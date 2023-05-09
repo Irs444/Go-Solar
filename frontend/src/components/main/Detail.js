@@ -34,11 +34,7 @@ const Detail = () => {
     useEffect(() => {
       getEquipmentData();
     }, [])
-     
-
-    // function handleClick(){
-    //     navigate('/user/CheckoutPage');
-    // }
+    
 
     return (
         <MDBContainer className="my-5">
@@ -50,7 +46,7 @@ const Detail = () => {
                         <MDBCol md='6'>
                             <MDBCardImage src={apiUrl+'/'+equipmentData.image} alt="login form" className='rounded-start w-100' />
                         </MDBCol>
-    
+      
                         <MDBCol md='6'>
                             <MDBCardBody className='d-flex flex-column'>
     

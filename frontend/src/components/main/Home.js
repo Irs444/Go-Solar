@@ -1,4 +1,4 @@
-import { MDBCol, MDBAnimation, MDBCarouselItem, MDBCarousel, MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBRow, MDBIcon, MDBFooter, MDBContainer, MDBBtn } from 'mdb-react-ui-kit';
+import { MDBCol, MDBAnimation, MDBCarouselItem, MDBCarousel, MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBRow, MDBIcon, MDBFooter, MDBContainer, MDBBtn, MDBCardFooter } from 'mdb-react-ui-kit';
 import React from 'react'
 import './Home.css'
 import Contacts from '../expert/Contacts';
@@ -8,7 +8,18 @@ import First from '../../imgs/First.jpg'
 import Second from '../../imgs/Second.jpg'
 // import Third from '../../imgs/Third.jpg'
 import Fourth from '../../imgs/Fourth.jpg'
+import { Link } from 'react-router-dom';
 function Home() {
+  const cardStyle = {
+    // backgroundImage: 'url(https://img.freepik.com/free-vector/green-energy-generated-by-wind-turbine-solar-panel_1308-73952.jpg?w=1380&t=st=1683540692~exp=1683541292~hmac=dbecd12f9f1f814310ceddb7445c420cee62bcd4c8a8bcb86b1d32f3ebc5dc9f)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    borderRadius: '10px',
+    color: 'white',
+    height: '400px', // set the desired height here
+    // borderRadius: '10px',
+    // color: 'white'
+  };
   return (
     <>
       <div>
@@ -55,14 +66,14 @@ function Home() {
                         <span className="text" style={{ color: "#19376D" }}>Energy Revolution</span>{" "}
                       </h1>{" "}
                       <p className='fw-normal mb-5'>Go Solar is transforming the way we access Renewable energy with simple and powerful solutions.</p>
-                      <a
+                      <Link
                         className="btn   btn-warning btn-lg py-3 px-5 me-md-2 mb-3"
-                        href="#"
+                       to={'/expert/Contacts'}
                         role="button"
                         aria-controls="#picker-editor"
                       >
                         Calculate Your Saving
-                      </a>{" "}
+                      </Link>{" "}
 
                     </div>
 
@@ -70,6 +81,7 @@ function Home() {
                 </div>
               </div>
             </section>
+            <Link   className="btn btn-primary rounded-pill  mx-2 sticky-button me-1" to={'/expert/ExpertChat'}>Chat With us <MDBIcon far icon="comment-alt" /></Link>
           </section>
           {/**/}
         </div>
@@ -189,110 +201,79 @@ function Home() {
           {/**/}
           <section draggable="false" className="container pt-5" data-v-271253ee="">
             <section className="mb-10 text-center">
-              <h2 className="fw-bold mb-7 text-center">Read Our Coustomer Stories to know the Go-Solar Difference</h2>
-              <div className="row " >
-                <div className="col-lg-4  mb-6 mb-lg-0" >
-                  <div className="card shadow-2-strong">
-                    <div
-                      className="container-fluid p-0"
-
-                    // data-mdb-ripple-color="light"
-                    // style={{ marginTop: "-15px" }}
-                    >
-                      {" "}
-                      <img
-                        src="https://images.pexels.com/photos/8853502/pexels-photo-8853502.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                        className=" img-fluid"
-
-                        alt=""
-                        aria-controls="#picker-editor"
-                      />{" "}
-                    </div>
-                    <div className="card-body">
-                      <h5 className="card-title">White city</h5>
-                      <p className="card-text">
-                        Ut pretium ultricies dignissim. Sed sit amet mi eget urna
-                        placerat vulputate. Ut vulputate est non quam dignissim
-                        elementum. Donec a ullamcorper diam.
-                      </p>{" "}
-                      <a
-                        href="#!"
-                        className="btn  btn-primary btn-rounded"
-                        aria-controls="#picker-editor"
-                      >
-                        Read more
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-4   mb-6 mb-lg-0" >
-                  <div className="card shadow-2-strong" >
-                    <div
-                      className="container-fluid p-0"
-
-                    // data-mdb-ripple-color="light"
-                    // style={{ marginTop: "-15px" }}
-                    >
-                      {" "}
-                      <img
-                        src="https://images.pexels.com/photos/9875685/pexels-photo-9875685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                        className="img-fluid"
-
-                        alt=""
-                        aria-controls="#picker-editor"
-                      />{" "}
-                    </div>
-                    <div className="card-body">
-                      <h5 className="card-title">A lonely bench</h5>
-                      <p className="card-text">
-                        Suspendisse in volutpat massa. Nulla facilisi. Sed aliquet
-                        diam orci, nec ornare metus semper sed. Integer volutpat
-                        ornare erat sit amet rutrum.
-                      </p>{" "}
-                      <a
-                        href="#!"
-                        className="btn  btn-primary btn-rounded"
-                        aria-controls="#picker-editor"
-                      >
-                        Read more
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-4  mb-6 mb-lg-0">
-                  <div className="card shadow-2-strong">
-                    <div
-                      className="container-fluid p-0"
-                    // data-mdb-ripple-color="light"
-                    // style={{ marginTop: "-15px" }}
-                    >
-                      {" "}
-                      <img
-                        src="https://images.pexels.com/photos/9875677/pexels-photo-9875677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                        className="img-fluid "
-
-                        alt=""
-                        aria-controls="#picker-editor"
-                      />{" "}
-                    </div>
-                    <div className="card-body">
-                      <h5 className="card-title">Happy snow</h5>
-                      <p className="card-text">
-                        Curabitur tristique, mi a mollis sagittis, metus felis mattis
-                        arcu, non vehicula nisl dui quis diam. Mauris ut risus eget
-                        massa volutpat feugiat. Donec.
-                      </p>{" "}
-                      <a
-                        href="#!"
-                        className="btn  btn-primary btn-rounded"
-                        aria-controls="#picker-editor"
-                      >
-                        Read more
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <h1 className="fw-bold mb-7 text-center" style={{color:"#19376D"}}>G'day! <span className='fw-normal'>How Can We</span> Help?</h1>
+              <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
+      <MDBCol>
+        <MDBCard className='h-100'>
+        <MDBCardTitle  className='display-6 fw-bold' style={{color:"#19376D"}}>Silver</MDBCardTitle>
+          <MDBCardImage
+            src='/one.png'
+            alt='...'
+            position='top'
+            style={{height:"350px"}}
+          />
+          <MDBCardBody>
+          
+          <div className="">
+          <MDBCardText ><i class="fas fa-circle-check"></i> 415w Risen Panels</MDBCardText>
+            <MDBCardText><i class="fas fa-circle-check"></i> Goodwe Inverter</MDBCardText>
+            <MDBCardText><i class="fas fa-circle-check"></i> 25 Year Panel Warranty</MDBCardText>
+            <MDBCardText  ><i class="fas fa-circle-check"></i> 10 Year Inverter Warranty</MDBCardText>
+           
+            
+          </div>
+          </MDBCardBody>
+          <MDBCardFooter>
+          <button type="button"  class="btn btn-warning rounded-pill" style={{color:"white"}}>Read More</button>
+          </MDBCardFooter>
+        </MDBCard>
+      </MDBCol>
+      <MDBCol>
+        <MDBCard className='h-100'>
+        <MDBCardTitle  className='display-6 fw-bold' style={{color:"#19376D"}}>Gold</MDBCardTitle>
+          <MDBCardImage
+            src='/two.png'
+            alt='...'
+            position='top' 
+            style={{height:"350px"}}
+          />
+          <MDBCardBody>
+          
+          <MDBCardText ><i class="fas fa-circle-check"></i> 415w Jinko N Panels</MDBCardText>
+            <MDBCardText><i class="fas fa-circle-check"></i> Sungrow Inverter</MDBCardText>
+            <MDBCardText><i class="fas fa-circle-check"></i> 25 Year Panel Warranty</MDBCardText>
+            <MDBCardText  ><i class="fas fa-circle-check"></i> 10 Year Inverter Warranty</MDBCardText>
+           
+         
+          </MDBCardBody>
+          <MDBCardFooter>
+          <button type="button"  class="btn btn-warning rounded-pill" style={{color:"white"}}>Read More</button>
+          </MDBCardFooter>
+        </MDBCard>
+      </MDBCol>
+      <MDBCol>
+        <MDBCard className='h-100'>
+        <MDBCardTitle className='display-6 fw-bold' style={{color:"#19376D"}}>Platinum</MDBCardTitle>
+          <MDBCardImage
+            src='/three.png'
+            alt='...'
+            position='top'
+            style={{height:"350px"}}
+          />
+          <MDBCardBody>
+           
+          <MDBCardText ><i class="fas fa-circle-check"></i> 410w REC Alpha Pure R</MDBCardText>
+            <MDBCardText><i class="fas fa-circle-check"></i> Fronius Inverter</MDBCardText>
+            <MDBCardText><i class="fas fa-circle-check"></i> 25 Year Panel Warranty</MDBCardText>
+            <MDBCardText  ><i class="fas fa-circle-check"></i> 10 Year Inverter Warranty</MDBCardText>
+           
+          </MDBCardBody>
+          <MDBCardFooter>
+          <button type="button"  class="btn btn-warning rounded-pill" style={{color:"white"}}>Read More</button>
+          </MDBCardFooter>
+        </MDBCard>
+      </MDBCol>
+    </MDBRow>
             </section>
           </section>
           {/**/}
@@ -306,7 +287,7 @@ function Home() {
             <MDBRow className='row-cols-1 row-cols-md-4 g-2'>
               <MDBCol>
                 <MDBCard className='h-100' >
-
+                  <img className="card-img" height="150px" src="https://img.freepik.com/free-vector/industry-flat-biogas-illustration_23-2149403737.jpg?w=996&t=st=1683542523~exp=1683543123~hmac=15ab4824ae25c15d24eb5773998c452437b9fdd40443f5d769c9a5126302b31d" alt="CardImg" srcset="" />
                   <MDBCardBody className='h-75'>
                     <MDBCardTitle>1. Select your Solar Package</MDBCardTitle>
                     <MDBCardText>
@@ -316,10 +297,13 @@ function Home() {
                 </MDBCard>
               </MDBCol>
               <MDBCol>
-                <MDBCardImage className='h-50' src={Second} alt='...' position='top' />
-                <MDBCard className='h-75'>
 
-                  <MDBCardBody>
+                <MDBCard className='h-100'>
+
+                  <MDBCardBody >
+                    <img className="card-img" height="150px" src="https://img.freepik.com/free-vector/sun-energy-concept-illustration_114360-6030.jpg?w=996&t=st=1683542652~exp=1683543252~hmac=a0ed9a25ddf5e45cc665fe521248d55233a2865f4bdbdef63be79bd337b98eeb" alt="CardImg" />
+
+
                     <MDBCardTitle>2. Installation of Solar System</MDBCardTitle>
                     <MDBCardText>
                       Our CEC Accredited Installation teams will take care of the entire installation process from start to finish!            </MDBCardText>
@@ -329,9 +313,10 @@ function Home() {
               <MDBCol>
                 <MDBCard className='h-100' >
 
-                  <MDBCardBody>
-                    <div style={{ backgroundImage: 'url("/Third.jpg")', height: '10rem', backgroundSize: 'cover' }}></div>
-                    {/* <MDBCardImage className='h-50' src={Third} alt='...' position='top' /> */}
+                  <MDBCardBody >
+                    <img className="card-img" height="150px" src="https://img.freepik.com/free-vector/green-energy-generated-by-wind-turbine-solar-panel_1308-73952.jpg?w=1060&t=st=1683541606~exp=1683542206~hmac=e2e2aafa21333db90007e7d209626a0f4465d2cba28fa83b88c50e9a94ddf257" alt="CardImg" />
+
+
                     <MDBCardTitle>3. Grid Connection with Electricity Provider</MDBCardTitle>
                     <MDBCardText>
                       Our team will generate and submit all required paperwork to your electricity provider to get you connected to the grid and ready to start saving!                      </MDBCardText>
@@ -341,8 +326,9 @@ function Home() {
               <MDBCol>
                 <MDBCard className='h-100' >
 
-                  <MDBCardBody>
-                    <MDBCardImage src={Fourth} alt='...' position='top' style={{ height: "50rem" }} />
+                  <MDBCardBody >
+                    <img className="card-img" src="https://img.freepik.com/free-vector/tiny-characters-village-with-windmills-solar-panels-save-planet-people-with-eco-friendly-lifestyle-flat-vector-illustration-sustainable-renewable-energy-technology-concept-banner_74855-23201.jpg?w=996&t=st=1683541127~exp=1683541727~hmac=6bd47e6ad30ca045b15583758b9dafcd16769d4d9409165efef82ce926fa9c5c" alt="CardImg" />
+
                     <MDBCardTitle>4. Enjoy savings!</MDBCardTitle>
                     <MDBCardText>Sit back relax and watch your electricity bill go down   </MDBCardText>
                   </MDBCardBody>

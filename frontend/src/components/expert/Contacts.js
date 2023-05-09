@@ -65,12 +65,13 @@ const Contacts = () => {
 
 
   return (<>
-    <div className="text-center">
-      <h4 className=" display-1 fw-bold ls-tight px-3" style={{ color: 'blue' }}>
+    
+    <div className="text-center" >
+      <h5 className=" display-4 fw-bold ls-tight px-3" style={{ color: '#E5CBE8 ' }}>
         Have Some Question? <br />
         {/* <span style={{color: 'hsl(218, 81%, 75%)'}}>for your business</span> */}
-      </h4>
-      <p className='px-3 text-center' style={{ color: 'lightblue' }}>
+      </h5>
+      <p className='px-3 text-center' style={{ color: 'hsl(218, 81%, 85%)' }}>
         Thank you for your interest in out services. Please fill out the form below<br /> and we will get back yo you promptly regarding your request.
       </p>
     </div>
@@ -80,15 +81,15 @@ const Contacts = () => {
 
         <MDBCol md='6' className='text-center text-md-start d-flex flex-column justify-content-center'>
 
-          <img src={ContactImg} alt="" className=' justify-content-center' width={600} height={400} />
+          <img src={ContactImg} alt="" className=' justify-content-center' height="350px" />
           <div className="me-5 d-none d-lg-block justify-content-center">
 
             <h4>Get In Touch</h4>
             <hr />
             <div className=" pr-5 ">
-              <span className=''><i class="fa-solid fa-phone me-4"   >&nbsp;&nbsp;&nbsp;+91 3678467834</i></span> <br />
-              <i class="fa-solid fa-envelope ">&nbsp;&nbsp;&nbsp; </i>hello@demo.com    <br />
-              <i class="fa-sharp fa-solid fa-location-dot">&nbsp;&nbsp;&nbsp;</i>931 Abia Martin Drive, PA Pennsylania-62465
+              <span className=''><i class="fa-solid fa-phone me-5"   >&nbsp;&nbsp;&nbsp;</i>+91 3678467834</span> <br />
+              <span className=''><i class="fa-solid fa-envelope  me-5">&nbsp;&nbsp;&nbsp; </i>hello@demo.com  </span>  <br />
+              <i class="fa-sharp fa-solid fa-location-dot me-5">&nbsp;&nbsp;&nbsp;</i>931 Abia Martin Drive, PA Pennsylania-62465
             </div>
           </div>
 
@@ -127,6 +128,7 @@ const Contacts = () => {
       </MDBRow>
 
     </MDBContainer>
+   
   </>
   );
 }

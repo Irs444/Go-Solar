@@ -95,7 +95,7 @@ const AddEquipment = () => {
   return (
     <MDBContainer className="my-5" >
       {/* <h2>Add New Equipment</h2> */}
-      <MDBCard >
+      <MDBCard style={{}}>
         <MDBRow className='g-0' >
 
           <MDBCol md='6'>

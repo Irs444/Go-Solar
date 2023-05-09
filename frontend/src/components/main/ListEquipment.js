@@ -42,22 +42,22 @@ const ListEquipment = () => {
                     {
                         equipmentList.map((equipment) => (
                             <MDBCol md="12" lg="4" className="mb-4 mb-lg-5">
-                                <MDBCard>
+                                <MDBCard style={{height:"550px",backgroundColor:"#F4F4F4"}}>
                                     <div className="d-flex justify-content-between p-3">
-                                        <p className="lead mb-0">Today's Combo Offer</p>
+                                        {/* <p className="lead mb-0">Today's Combo Offer</p> */}
                                         <div
                                             className="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong"
                                             style={{ width: "35px", height: "35px" }}
                                         >
-                                            <p className="text-white mb-0 small">x4</p>
+                                            {/* <p className="text-white mb-0 small">x4</p> */}
                                         </div>
                                     </div>
-                                    <MDBCardImage
+                                    <MDBCardImage className='img-fluid rounded'
                                         src={apiUrl+"/" + equipment.image}
                                         position="top"
-                                        alt="Laptop"
+                                        alt="Laptop" style={{height:"250px"}}
                                     />
-                                    <MDBCardBody>
+                                    <MDBCardBody style={{height:"350px "}}>
                                         <div className="d-flex justify-content-between">
                                             <p className="small">
                                                 <a href="#!" className="text-muted">
@@ -69,8 +69,10 @@ const ListEquipment = () => {
                                             </p>
                                         </div>
 
-                                        <div className="d-flex justify-content-between mb-3">
-                                            <h5 className="mb-0">{equipment.title}</h5>
+                                        <div className="d-flex justify-content-between mb-3" >
+                                            <h5 className="mb-0" style={{lineHeight: "1em",
+    height:" 3em",    
+    overflow: "hidden"}}>{equipment.title}</h5>
                                             <h5 className="text-dark mb-0">$999</h5>
                                         </div>
 
@@ -86,8 +88,8 @@ const ListEquipment = () => {
                                                 <MDBIcon fas icon="star" />
                                             </div>
                                         </div>
-                                        <button onClick={e => addItemToCart(equipment)}>Add to Cart</button>
-                                        <Link className='btn btn-primary' to={'/main/details/'+equipment._id}>View Details</Link>
+                                        <button onClick={e => addItemToCart(equipment)} className='btn btn-success'>Add to Cart</button>
+                                        <Link className='btn btn-primary float-end' to={'/main/details/'+equipment._id}>View Details</Link>
                                     </MDBCardBody>
                                 </MDBCard>
                             </MDBCol>
