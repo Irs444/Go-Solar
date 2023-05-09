@@ -36,9 +36,9 @@ const Detail = () => {
     }, [])
      
 
-    function handleClick(){
-        navigate('/user/CheckoutPage');
-    }
+    // function handleClick(){
+    //     navigate('/user/CheckoutPage');
+    // }
 
     return (
         <MDBContainer className="my-5">

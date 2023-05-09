@@ -66,11 +66,11 @@ const Contacts = () => {
 
   return (<>
     <div className="text-center">
-      <h4 className=" display-1 fw-bold ls-tight px-3" style={{ color: 'hsl(218, 81%, 95%)' }}>
+      <h4 className=" display-1 fw-bold ls-tight px-3" style={{ color: 'blue' }}>
         Have Some Question? <br />
         {/* <span style={{color: 'hsl(218, 81%, 75%)'}}>for your business</span> */}
       </h4>
-      <p className='px-3 text-center' style={{ color: 'hsl(218, 81%, 85%)' }}>
+      <p className='px-3 text-center' style={{ color: 'lightblue' }}>
         Thank you for your interest in out services. Please fill out the form below<br /> and we will get back yo you promptly regarding your request.
       </p>
     </div>

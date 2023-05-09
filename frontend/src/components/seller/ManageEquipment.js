@@ -15,6 +15,7 @@ import {
   MDBTable,
   MDBTableHead,
   MDBTableBody,
+  MDBIcon,
 } from "mdb-react-ui-kit";
 import AddEquipment from "./AddEquipment";
 import app_config from "../../config";
@@ -104,8 +105,8 @@ export default function ManageEquipment() {
                 <th scope='col'>Description</th>
                 <th scope='col'>Price</th>
                 <th scope='col'>Category</th>
-                <th scope='col'>image</th>
-                <th scope='col'>Seller</th>
+                {/* <th scope='col'>image</th> */}
+                {/* <th scope='col'>Seller</th> */}
                 <th scope='col'>Created At</th>
               </tr>
             </MDBTableHead>
@@ -141,9 +142,8 @@ export default function ManageEquipment() {
                       {new Date(equip.createdAt).toLocaleDateString()}
                     </td>
                     <td>
-                      <MDBBtn color='link' rounded size='sm'>
-                        Edit
-                      </MDBBtn>
+                      
+                      <MDBIcon style={{color:"red"}} far icon="trash-alt" />
                     </td>
                   </tr>
                 ))}
