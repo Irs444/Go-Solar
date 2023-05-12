@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Signup from './components/main/Signup';
@@ -26,56 +26,88 @@ import Detail from './components/main/Detail';
 import SellerAuth from './auth/SellerAuth';
 import { ProductProvider } from './context/ProductContext';
 import Cart from './components/user/Cart';
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import CheckoutForm from './components/main/CheckoutForm';
+import { UserProvider } from './context/UserContext';
 
+const stripePromise = loadStripe("pk_test_51N5i2kSE8ALNlcfUtgUUY9EuKBo2R5jT2xc1SmEreUZA03N6EJC4ReRHCClCD6XNR75gBTQ5SwC6az8iE18w1OaQ00UeK2oh7O");
 function App() {
-  return (
-    <BrowserRouter>
 
-      <ProductProvider>
 
-        <Routes>
-          <Route path="/" element={<Navigate to="/main/home" />} />
-          <Route path="main" element={<Main />} >
-            <Route path='details/:id' element={<Detail />} />
-            <Route path="signup" element={<Signup />} />
-            <Route path="Login" element={<Login />} />
-            <Route path="Home" element={<Home />} />
-            <Route path="SellerLogin" element={<SellerLogin />} />
-            <Route path="SellerSignUp" element={<SellerSignUp />} />
-            <Route path="ListEquipment" element={<ListEquipment />} />
-          </Route>
-          <Route path="Seller" element={<SellerAuth> <Seller /> </SellerAuth>} >
+  const [clientSecret, setClientSecret] = useState("");
+  const appearance = {
+    theme: 'stripe',
+  };
+  const options = {
+    clientSecret,
+    appearance,
+  };
 
-            <Route path="ManageEquipment" element={<ManageEquipment />} />
-            <Route path="AddEquipment" element={<AddEquipment />} />
+  // useEffect(() => {
+  //   // Create PaymentIntent as soon as the page loads
+  //   fetch("http://localhost:5000/create-payment-intent", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => setClientSecret(data.clientSecret));
+  // }, []);
+  
+  return <BrowserRouter>
 
-          </Route>
-          <Route path="Admin" element={<Admin />} >
+      {/* {clientSecret && (
+        <Elements options={options} stripe={stripePromise}>
+          <CheckoutForm />
+        </Elements>
+      )} */}
+    <ProductProvider>
+      <UserProvider>
+      <Routes>
+        <Route path="/" element={<Navigate to="/main/home" />} />
+        <Route path="main" element={<Main />} >
+          <Route path='details/:id' element={<Detail />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="Login" element={<Login />} />
+          <Route path="Home" element={<Home />} />
+          <Route path="SellerLogin" element={<SellerLogin />} />
+          <Route path="SellerSignUp" element={<SellerSignUp />} />
+          <Route path="ListEquipment" element={<ListEquipment />} />
+        </Route>
+        <Route path="Seller" element={<SellerAuth> <Seller /> </SellerAuth>} >
 
-            <Route path="AdminProfile" element={<AdminProfile />} />
-            <Route path="ManageExpert" element={<ManageExpert />} />
-            <Route path="ManageUser" element={<ManageUser />} />
-          </Route>
-          <Route path="User" element={<User />} >
+          <Route path="ManageEquipment" element={<ManageEquipment />} />
+          <Route path="AddEquipment" element={<AddEquipment />} />
 
-            <Route path="ManageOrders" element={<ManageOrders />} />
-            <Route path="UserProfile" element={<UserProfile />} />
-            <Route path="CheckoutPage" element={<CheckoutPage />} />
-            <Route path="cart" element={<Cart />} />
+        </Route>
+        <Route path="Admin" element={<Admin />} >
 
-          </Route>
-          <Route path="Expert" element={<Expert />} >
+          <Route path="AdminProfile" element={<AdminProfile />} />
+          <Route path="ManageExpert" element={<ManageExpert />} />
+          <Route path="ManageUser" element={<ManageUser />} />
+        </Route>
+        <Route path="User" element={<User />} >
 
-            <Route path="Contacts" element={<Contacts />} />
-            <Route path="ExpertChat" element={<ExpertChat />} />
+          <Route path="ManageOrders" element={<ManageOrders />} />
+          <Route path="UserProfile" element={<UserProfile />} />
+          <Route path="CheckoutPage" element={<CheckoutPage />} />
+          <Route path="cart" element={<Cart />} />
 
-          </Route>
-        </Routes>
+        </Route>
+        <Route path="Expert" element={<Expert />} >
 
-      </ProductProvider>
+          <Route path="Contacts" element={<Contacts />} />
+          <Route path="ExpertChat" element={<ExpertChat />} />
 
-    </BrowserRouter>
-  )
+        </Route>
+      </Routes>
+
+    </UserProvider>
+    </ProductProvider>
+
+  </BrowserRouter>
+
 }
 
 export default App

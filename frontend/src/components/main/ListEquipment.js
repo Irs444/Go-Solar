@@ -17,7 +17,7 @@ const ListEquipment = () => {
     const [masterList, setMasterList] = useState([]);
     const { apiUrl } = app_config;
 
-    const {addItemToCart} = useProductContext();
+    const {addItemToCart, isInCart} = useProductContext();
 
     const fetchEquipmentData = async () => {
         const res = await fetch(apiUrl + '/equipment/getall');
@@ -88,7 +88,7 @@ const ListEquipment = () => {
                                                 <MDBIcon fas icon="star" />
                                             </div>
                                         </div>
-                                        <button onClick={e => addItemToCart(equipment)} className='btn btn-success'>Add to Cart</button>
+                                        <button disabled={isInCart(equipment)} onClick={e => addItemToCart(equipment)} className='btn btn-success'>{isInCart(equipment) ?'Already Added': 'Add to Cart'}</button>
                                         <Link className='btn btn-primary float-end' to={'/main/details/'+equipment._id}>View Details</Link>
                                     </MDBCardBody>
                                 </MDBCard>

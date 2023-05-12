@@ -3,10 +3,37 @@ import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import useProductContext from '../../context/ProductContext'
 import './Navbar.css'
+import useUserContext from '../../context/UserContext';
 function Navbar() {
 
   const { getCartItemsCount } = useProductContext();
- 
+  const { loggedIn, logout } = useUserContext();
+  console.log(loggedIn);
+  const showLoggedin = () => {
+    if (loggedIn) {
+      return (
+        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li className="nav-item">
+            <button className="btn btn-danger" onClick={logout}>
+              Logout
+            </button>
+          </li>
+        </ul>
+      );
+    } else {
+      return <>
+        <NavLink type="button" className="btn rounded-pill btn-outline-warning nav-link me-2" to="/main/login">
+          Login
+        </NavLink>
+
+        <NavLink role='button' className="btn  btn-custom rounded-pill nav-link btn-lg btn-block" to="/main/signup" >
+          Signup
+        </NavLink>
+      </>
+    }
+  };
+
+
   return (
     <>
       {/* Navbar */}
@@ -80,7 +107,7 @@ function Navbar() {
                   </MDBDropdownMenu>
                 </MDBDropdown>
               </MDBNavbarItem>
-              
+
               <li className="nav-item">
                 <NavLink className="nav-link" to="/expert/Contacts">
                   Contact Us
@@ -108,23 +135,17 @@ function Navbar() {
             {/* Left links */}
           </div>
           <div className="d-flex align-items-center ">
-     
-    
-                <NavLink  type="button" className="btn rounded-pill btn-outline-warning nav-link me-2"  to="/main/login">
-                  Login
-                </NavLink>
-             
-                <NavLink role='button' className="btn  btn-custom rounded-pill nav-link btn-lg btn-block" to="/main/signup" >
-                  Signup
-                </NavLink>
-            
 
- 
-      
-     
-     
-    </div>
-   
+
+            {showLoggedin()}
+
+
+
+
+
+
+          </div>
+
           {/* Right elements */}
         </div>
         {/* Container wrapper */}

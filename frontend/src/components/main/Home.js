@@ -81,7 +81,7 @@ function Home() {
                 </div>
               </div>
             </section>
-            <Link   className="btn btn-primary rounded-pill  mx-2 sticky-button me-1" to={'/expert/ExpertChat'}>Chat With us <MDBIcon far icon="comment-alt" /></Link>
+            {/* <Link   className="btn btn-primary rounded-pill  mx-2 sticky-button me-1" to={'/expert/ExpertChat'}>Chat With us <MDBIcon far icon="comment-alt" /></Link> */}
           </section>
           {/**/}
         </div>
@@ -200,12 +200,12 @@ function Home() {
           {/**/}
           {/**/}
           <section draggable="false" className="container pt-5" data-v-271253ee="">
-            <section className="mb-10 text-center">
+            <section className="mb-10">
               <h1 className="fw-bold mb-7 text-center" style={{color:"#19376D"}}>G'day! <span className='fw-normal'>How Can We</span> Help?</h1>
               <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
       <MDBCol>
         <MDBCard className='h-100'>
-        <MDBCardTitle  className='display-6 fw-bold' style={{color:"#19376D"}}>Silver</MDBCardTitle>
+        <MDBCardTitle  className='display-6 fw-bold text-center' style={{color:"#19376D"}}>Silver</MDBCardTitle>
           <MDBCardImage
             src='/one.png'
             alt='...'
@@ -224,13 +224,13 @@ function Home() {
           </div>
           </MDBCardBody>
           <MDBCardFooter>
-          <button type="button"  class="btn btn-warning rounded-pill" style={{color:"white"}}>Read More</button>
+          <button type="button"  class="btn btn-warning rounded-pill float-end w-50" style={{color:"white"}}>Read More</button>
           </MDBCardFooter>
         </MDBCard>
       </MDBCol>
       <MDBCol>
         <MDBCard className='h-100'>
-        <MDBCardTitle  className='display-6 fw-bold' style={{color:"#19376D"}}>Gold</MDBCardTitle>
+        <MDBCardTitle  className='display-6 fw-bold text-center' style={{color:"#19376D"}}>Gold</MDBCardTitle>
           <MDBCardImage
             src='/two.png'
             alt='...'
@@ -247,13 +247,13 @@ function Home() {
          
           </MDBCardBody>
           <MDBCardFooter>
-          <button type="button"  class="btn btn-warning rounded-pill" style={{color:"white"}}>Read More</button>
+          <button type="button"  class="btn btn-warning rounded-pill w-50 float-end" style={{color:"white"}}>Read More</button>
           </MDBCardFooter>
         </MDBCard>
       </MDBCol>
       <MDBCol>
         <MDBCard className='h-100'>
-        <MDBCardTitle className='display-6 fw-bold' style={{color:"#19376D"}}>Platinum</MDBCardTitle>
+        <MDBCardTitle className='display-6 fw-bold text-center' style={{color:"#19376D"}}>Platinum</MDBCardTitle>
           <MDBCardImage
             src='/three.png'
             alt='...'
@@ -269,7 +269,7 @@ function Home() {
            
           </MDBCardBody>
           <MDBCardFooter>
-          <button type="button"  class="btn btn-warning rounded-pill" style={{color:"white"}}>Read More</button>
+          <button type="button"  class="btn btn-warning rounded-pill w-50 float-end" style={{color:"white"}}>Read More</button>
           </MDBCardFooter>
         </MDBCard>
       </MDBCol>
