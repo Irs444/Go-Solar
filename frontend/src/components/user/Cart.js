@@ -1,6 +1,18 @@
 import React, { useState } from "react";
 import useProductContext from "../../context/ProductContext";
-
+import {
+  MDBBtn,
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBIcon,
+  MDBInput,
+  MDBCardBody,
+  MDBCardImage,
+  MDBCard
+}
+from 'mdb-react-ui-kit';
+import { Link } from "react-router-dom";
 const Cart = () => {
   const {
     cartItems,
@@ -13,7 +25,14 @@ const Cart = () => {
   } = useProductContext();
 
   const displayCartItems = () => {
-    if (getCartItemsCount() === 0) return <p>Cart is empty</p>;
+    if (getCartItemsCount() === 0) return (
+   <div className="text-center">
+     <MDBCardImage src={'/cart.png'} alt="login form" className='rounded-start mt-4 w-25 text-center'/>
+     <h3>Your Cart is Currently Empty!</h3>
+     <p className="text-muted">Before proceed to checkout you must add some products to your shopping cart. <br />You will fill a lot of interesting products on our "Product" page.</p>
+     <Link className="btn rounded-pill" style={{backgroundColor:"#4BCCF2", color:"#fff"}} to={"/main/ListEquipment"}>Return To Shop</Link>
+   </div>
+     ) ;
     return cartItems.map((item) => (
       <div key={item._id} className="row mb-3">
         <div className="col-2">
@@ -56,30 +75,73 @@ const Cart = () => {
   };
 
   return (
-    <div>
-      <h1>Cart</h1>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-8">
-            <h3>Product</h3>
+    // <div>
+    //   <h1>Cart</h1>
+    //   <div className="container">
+    //     <div className="row">
+    //       <div className="col-md-8">
+    //         <h3>Product</h3>
+    //         <hr />
+    //         {displayCartItems()}
+    //       </div>
+    //       <div className="col-md-4">
+    //         <div className="card">
+    //           <div className="card-body">
+    //             <h3>Summary</h3>
+    //             <hr />
+
+    //             <p>Total: {getCartTotal()}</p>
+    //             <p>Items: {getCartItemsCount()}</p>
+    //             <button className="btn btn-danger" onClick={() => clearCart()}> Clear Cart</button>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
+
+    <MDBContainer className="my-3">
+
+      <MDBCard style={{height:"80vh"}}>
+        <MDBRow className='g-0'>
+     
+          <MDBCol md='9'>
+            <h2 className="mt-2 mx-3">Shopping Cart</h2>
             <hr />
             {displayCartItems()}
-          </div>
-          <div className="col-md-4">
-            <div className="card">
-              <div className="card-body">
-                <h3>Summary</h3>
-                <hr />
 
-                <p>Total: {getCartTotal()}</p>
-                <p>Items: {getCartItemsCount()}</p>
-                <button className="btn btn-danger" onClick={() => clearCart()}> Clear Cart</button>
+            {/* <p>Continue Shopping</p> */}
+          </MDBCol>
+
+          <MDBCol md='3'>
+            <MDBCardBody className=''>
+
+            {/* <div className="col-md-4"> */}
+       <div className="card " style={{height:"50vh"}}>
+         <div className="card-body">
+           <h3>Order Summary</h3>
+           <hr />
+
+           <p>Total: {getCartTotal()}</p>
+           <p>Items: {getCartItemsCount()}</p>
+           <button className="btn btn-danger" onClick={() => clearCart()}> Clear Cart</button>
+         </div>
+       </div>
+     {/* </div> */}
+             
+
+              <div className='d-flex flex-row justify-content-start'>
+               
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+              {/* </form> */}
+            </MDBCardBody>
+          </MDBCol>
+
+        </MDBRow>
+      </MDBCard>
+
+    </MDBContainer>
+
   );
 };
 

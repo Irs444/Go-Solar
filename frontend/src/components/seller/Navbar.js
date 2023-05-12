@@ -25,7 +25,7 @@ function Navbar() {
         {/* Navbar brand */}
         <a className="navbar-brand mt-2 mt-lg-0" href="#">
           <img
-            src="/logo512.png"
+            src="/goSolar.png"
             height={40}
             alt="MDB Logo"
             loading="lazy"
@@ -34,7 +34,7 @@ function Navbar() {
         {/* Left links */}
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <NavLink className="nav-link" to="/home">
+            <NavLink className="nav-link" to="/main/home">
              Home
             </NavLink>
           </li>

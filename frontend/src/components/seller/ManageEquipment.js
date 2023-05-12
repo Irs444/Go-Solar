@@ -57,9 +57,10 @@ export default function ManageEquipment() {
     <>
 
 
-      <div className="mb-5 ">
-        <h1 className='text-center ' style={{ display: "inline-block" }}>Manage Equipment</h1>
-        <button className="btn btn-primary " onClick={toggleShow} style={{ float: 'right', margin: 20 }}>Add Equipment</button>
+ 
+      <MDBContainer className="my-1">
+        <h1 className='text-center ' style={{ display: "inline-block",color:"#000" }}>Manage Equipment</h1>
+        <button className="btn btn-primary " onClick={toggleShow} style={{ float: 'right', margin: 20 }}><i class="fas fa-plus me-2"></i>Add Equipment</button>
         <MDBModal show={basicModal} setShow={setBasicModal} tabIndex="-1">
           <MDBModalDialog >
             <MDBModalContent style={{width:"800px"}}>
@@ -84,9 +85,7 @@ export default function ManageEquipment() {
             </MDBModalContent>
           </MDBModalDialog>
         </MDBModal>
-      </div>
-      <MDBContainer className="my-1">
-        <MDBInputGroup className="mb-3 mt-2">
+        <MDBInputGroup className="mb-2 mt-1">
         <MDBInput label='Search Title' onChange={applySearch} id='typeText' type='text' />
           {/* <input label='Search Name' onChange={applySearch} className="form-control form-control-lg" /> */}
           {/* <MDBBtn rippleColor='dark'>

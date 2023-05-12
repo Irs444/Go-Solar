@@ -24,9 +24,9 @@ function SellerLogin() {
       email : "",
       password : "",
     },
-    onSubmit : async (values) => {
+    onSubmit : async (values, onSubmitProps) => {
       console.log(values);
-      
+      onSubmitProps.resetForm();
       const res = await fetch('http://localhost:5000/seller/authenticate',{
         method: 'POST',
         body: JSON.stringify(values),
