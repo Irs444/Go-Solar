@@ -5,10 +5,12 @@ import Swal from 'sweetalert2';
 import solar from '../../imgs/solar.jpg'
 import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
 import { Link, useNavigate } from 'react-router-dom';
+import useUserContext from '../../context/UserContext';
 const Login = () => {
 
   const navigate = useNavigate();
   
+  const { setLoggedIn } = useUserContext();
 
 
   const loginForm = useFormik({
@@ -34,6 +36,7 @@ const Login = () => {
           tittle: "nice",
           text: "You have succesfyll login",
         });
+        setLoggedIn(true);
         navigate('/main/ListEquipment');
 
       } else if (res.status === 401){

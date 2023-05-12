@@ -1,18 +1,9 @@
 import React, { useState } from "react";
 import useProductContext from "../../context/ProductContext";
-import {
-  MDBBtn,
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBIcon,
-  MDBInput,
-  MDBCardBody,
-  MDBCardImage,
-  MDBCard
-}
-from 'mdb-react-ui-kit';
+import CheckoutPage from "./CheckoutPage";
+import { MDBCard, MDBCardBody, MDBCardImage, MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
+
 const Cart = () => {
   const {
     cartItems,
@@ -142,6 +133,88 @@ const Cart = () => {
 
     </MDBContainer>
 
+        //   </div>
+        //   <div className="col-md-4">
+        //     <div className="card">
+        //       <div className="card-body">
+        //         <h3>Summary</h3>
+        //         <hr /> 
+        //         <div
+        //                         className="rounded d-flex flex-column p-2"
+        //                         style={{ backgroundColor: "#f8f9fa" }}
+        //                     >
+        //                         <div className="p-2 me-3">
+        //                             <h4>Order Recap</h4>
+        //                         </div>
+        //                         <div className="p-2 d-flex">
+        //                             <MDBCol size="8">Contracted Price</MDBCol>
+        //                             <div className="ms-auto">$186.76</div>
+        //                         </div>
+        //                         <div className="p-2 d-flex">
+        //                             <MDBCol size="8">Amount toward deductible</MDBCol>
+        //                             <div className="ms-auto">$0.00</div>
+        //                         </div>
+        //                         <div className="p-2 d-flex">
+        //                             <MDBCol size="8">Coinsurance(0%)</MDBCol>
+        //                             <div className="ms-auto">+ $0.00</div>
+        //                         </div>
+        //                         <div className="p-2 d-flex">
+        //                             <MDBCol size="8">Copayment</MDBCol>
+        //                             <div className="ms-auto">+ $40.00</div>
+        //                         </div>
+        //                         <div className="border-top px-2 mx-2"></div>
+        //                         <div className="p-2 d-flex pt-3">
+        //                             <MDBCol size="8">
+        //                                 Total Deductible, Coinsurance, and Copay
+        //                             </MDBCol>
+        //                             <div className="ms-auto">$40.00</div>
+        //                         </div>
+        //                         <div className="p-2 d-flex">
+        //                             <MDBCol size="8">
+        //                                 Maximum out-of-pocket on Insurance Policy (not reached)
+        //                             </MDBCol>
+        //                             <div className="ms-auto">$6500.00</div>
+        //                         </div>
+        //                         <div className="border-top px-2 mx-2"></div>
+        //                         <div className="p-2 d-flex pt-3">
+        //                             <MDBCol size="8">Insurance Responsibility</MDBCol>
+        //                             <div className="ms-auto">
+        //                                 <b>$71.76</b>
+        //                             </div>
+        //                         </div>
+        //                         <div className="p-2 d-flex">
+        //                             <MDBCol size="8">
+        //                                 Patient Balance{" "}
+        //                                 <span className="fa fa-question-circle text-dark"></span>
+        //                             </MDBCol>
+        //                             <div className="ms-auto">
+        //                                 <b>$71.76</b>
+        //                             </div>
+        //                         </div>
+        //                         <div className="border-top px-2 mx-2"></div>
+        //                         <div className="p-2 d-flex pt-3">
+        //                             <MDBCol size="8">
+        //                                 <b>Total</b>
+        //                             </MDBCol>
+        //                             <div className="ms-auto">
+        //                                 <b className="text-success">$85.00</b>
+        //                             </div>
+        //                         </div>
+        //                     </div>
+        //         <p>Total: {getCartTotal()}</p>
+        //         <p>Items: {getCartItemsCount()}</p>
+        //         <button className="btn btn-danger" onClick={() => clearCart()}> Clear Cart</button>
+        //       </div>
+        //     </div>
+        //   </div>
+        // </div>
+
+      // <label>Delivery Address</label>
+      // <textarea className="form-control" />
+
+      
+      // </div>
+    // </div>
   );
 };
 

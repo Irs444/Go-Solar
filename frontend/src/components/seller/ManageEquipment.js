@@ -15,9 +15,11 @@ import {
   MDBTable,
   MDBTableHead,
   MDBTableBody,
+  MDBIcon,
 } from "mdb-react-ui-kit";
 import AddEquipment from "./AddEquipment";
 import app_config from "../../config";
+import Swal from "sweetalert2";
 
 export default function ManageEquipment() {
   const [basicModal, setBasicModal] = useState(false);
@@ -51,6 +53,21 @@ export default function ManageEquipment() {
     setUserList(masterList.filter((equipment) => {
       return equipment.title.toLowerCase().includes(inputText.toLowerCase());
     }));
+  }
+
+  const deleteEquipment = async (id) => {
+    const res = await fetch(`http://localhost:5000/equipment/delete/${id}`, {
+      method: 'DELETE',
+    });
+    console.log(res.status);
+    if (res.status === 200) {
+      fetchUserData();
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: "You have successfully deleted the equipment",
+      })
+    }
   }
 
   return (
@@ -102,8 +119,8 @@ export default function ManageEquipment() {
                 <th scope='col'>Description</th>
                 <th scope='col'>Price</th>
                 <th scope='col'>Category</th>
-                <th scope='col'>image</th>
-                <th scope='col'>Seller</th>
+                {/* <th scope='col'>image</th> */}
+                {/* <th scope='col'>Seller</th> */}
                 <th scope='col'>Created At</th>
               </tr>
             </MDBTableHead>
@@ -139,9 +156,9 @@ export default function ManageEquipment() {
                       {new Date(equip.createdAt).toLocaleDateString()}
                     </td>
                     <td>
-                      <MDBBtn color='link' rounded size='sm'>
-                        Edit
-                      </MDBBtn>
+                      <button className="btn" onClick={e => deleteEquipment(equip._id)}>
+                      <MDBIcon style={{color:"red"}} far icon="trash-alt" />
+                      </button>
                     </td>
                   </tr>
                 ))}
