@@ -54,56 +54,57 @@ function App() {
   //     .then((res) => res.json())
   //     .then((data) => setClientSecret(data.clientSecret));
   // }, []);
-  
+
   return <BrowserRouter>
 
-      {/* {clientSecret && (
+    {/* {clientSecret && (
         <Elements options={options} stripe={stripePromise}>
           <CheckoutForm />
         </Elements>
       )} */}
     <ProductProvider>
       <UserProvider>
-      <Routes>
-        <Route path="/" element={<Navigate to="/main/home" />} />
-        <Route path="main" element={<Main />} >
-          <Route path='details/:id' element={<Detail />} />
-          <Route path="signup" element={<Signup />} />
-          <Route path="Login" element={<Login />} />
-          <Route path="Home" element={<Home />} />
-          <Route path="SellerLogin" element={<SellerLogin />} />
-          <Route path="SellerSignUp" element={<SellerSignUp />} />
-          <Route path="ListEquipment" element={<ListEquipment />} />
-        </Route>
-        <Route path="Seller" element={<SellerAuth> <Seller /> </SellerAuth>} >
+        <Routes>
+          <Route path="/" element={<Navigate to="/main/home" />} />
+          <Route path="main" element={<Main />} >
+            <Route path='details/:id' element={<Detail />} />
+            <Route path="signup" element={<Signup />} />
+            <Route path="Login" element={<Login />} />
+            <Route path="Home" element={<Home />} />
+            <Route path="SellerLogin" element={<SellerLogin />} />
+            <Route path="SellerSignUp" element={<SellerSignUp />} />
+            <Route path="ListEquipment" element={<ListEquipment />} />
+            {/* <Route path="checkout" element={<Elements options={options} stripe={stripePromise}> <CheckoutForm /> </Elements>} /> */}
+          </Route>
+          <Route path="Seller" element={<SellerAuth> <Seller /> </SellerAuth>} >
 
-          <Route path="ManageEquipment" element={<ManageEquipment />} />
-          <Route path="AddEquipment" element={<AddEquipment />} />
+            <Route path="ManageEquipment" element={<ManageEquipment />} />
+            <Route path="AddEquipment" element={<AddEquipment />} />
 
-        </Route>
-        <Route path="Admin" element={<Admin />} >
+          </Route>
+          <Route path="Admin" element={<Admin />} >
 
-          <Route path="AdminProfile" element={<AdminProfile />} />
-          <Route path="ManageExpert" element={<ManageExpert />} />
-          <Route path="ManageUser" element={<ManageUser />} />
-        </Route>
-        <Route path="User" element={<User />} >
+            <Route path="AdminProfile" element={<AdminProfile />} />
+            <Route path="ManageExpert" element={<ManageExpert />} />
+            <Route path="ManageUser" element={<ManageUser />} />
+          </Route>
+          <Route path="User" element={<User />} >
 
-          <Route path="ManageOrders" element={<ManageOrders />} />
-          <Route path="UserProfile" element={<UserProfile />} />
-          <Route path="CheckoutPage" element={<CheckoutPage />} />
-          <Route path="cart" element={<Cart />} />
+            <Route path="ManageOrders" element={<ManageOrders />} />
+            <Route path="UserProfile" element={<UserProfile />} />
+            <Route path="CheckoutPage" element={<CheckoutPage />} />
+            <Route path="cart" element={<Cart />} />
 
-        </Route>
-        <Route path="Expert" element={<Expert />} >
+          </Route>
+          <Route path="Expert" element={<Expert />} >
 
-          <Route path="Contacts" element={<Contacts />} />
-          <Route path="ExpertChat" element={<ExpertChat />} />
+            <Route path="Contacts" element={<Contacts />} />
+            <Route path="ExpertChat" element={<ExpertChat />} />
 
-        </Route>
-      </Routes>
+          </Route>
+        </Routes>
 
-    </UserProvider>
+      </UserProvider>
     </ProductProvider>
 
   </BrowserRouter>

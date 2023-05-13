@@ -55,7 +55,7 @@ setUserList(data);
           <td>
             <div className='d-flex align-items-center'>
               <img
-                src='https://mdbootstrap.com/img/new/avatars/8.jpg'
+                src='https://mdbootstrap.com/img/new/avatars/2.jpg'
                 alt=''
                 style={{ width: '45px', height: '45px' }}
                 className='rounded-circle'
