@@ -15,7 +15,6 @@ const stripe = require("stripe")('sk_test_51N5i2kSE8ALNlcfUeImWOPJjucvuwXy38yixq
 
 app.use(express.json());
 
-
 app.use('/expert', expertRouter);
 app.use('/user', userRouter);
 app.use('/seller', sellerRouter);
