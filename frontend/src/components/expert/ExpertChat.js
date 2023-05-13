@@ -1,7 +1,13 @@
 import React from "react";
+import app_config from "../../config";
+import io from "socket.io-client";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";    
+import { useNavigate } from "react-router-dom";
+
 const ExpertChat = () => {
 
-    const url = app_config.backend_url;
+    const url = app_config.apiUrl;
 
   const [curentExpert, setCurentExpert] = useState(
     JSON.parse(sessionStorage.getItem("expert"))

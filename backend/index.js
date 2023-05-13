@@ -4,6 +4,7 @@ const app = express();
 const port = 5000;
 
 const userRouter = require('./routers/userRouter');
+const expertRouter = require('./routers/expertRouter');
 const equipmentRouter = require('./routers/equipmentRouter');
 const sellerRouter = require('./routers/sellerRouter');
 const contactRouter=require('./routers/contactRouter')
@@ -14,6 +15,8 @@ const stripe = require("stripe")('sk_test_51N5i2kSE8ALNlcfUeImWOPJjucvuwXy38yixq
 
 app.use(express.json());
 
+
+app.use('/expert', expertRouter);
 app.use('/user', userRouter);
 app.use('/seller', sellerRouter);
 app.use('/equipment', equipmentRouter);

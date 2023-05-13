@@ -30,6 +30,9 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from './components/main/CheckoutForm';
 import { UserProvider } from './context/UserContext';
+import UserChat from './components/user/Chat';
+
+import Elogin from './components/expert/Elogin';
 
 const stripePromise = loadStripe("pk_test_51N5i2kSE8ALNlcfUtgUUY9EuKBo2R5jT2xc1SmEreUZA03N6EJC4ReRHCClCD6XNR75gBTQ5SwC6az8iE18w1OaQ00UeK2oh7O");
 function App() {
@@ -94,12 +97,14 @@ function App() {
             <Route path="UserProfile" element={<UserProfile />} />
             <Route path="CheckoutPage" element={<CheckoutPage />} />
             <Route path="cart" element={<Cart />} />
+            <Route path="chat" element={<UserChat />} />
 
           </Route>
           <Route path="Expert" element={<Expert />} >
 
             <Route path="Contacts" element={<Contacts />} />
             <Route path="ExpertChat" element={<ExpertChat />} />
+            <Route path="Elogin" element={<Elogin />} />
 
           </Route>
         </Routes>
