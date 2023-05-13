@@ -1,7 +1,62 @@
 import React from "react";
 const ExpertChat = () => {
 
-    const 
+    const url = app_config.backend_url;
+
+  const [curentExpert, setCurentExpert] = useState(
+    JSON.parse(sessionStorage.getItem("expert"))
+  );
+
+  const [msgList, setMsgList] = useState([]);
+
+  //   intialize socket.io-client
+  const [socket, setSocket] = useState(io(url, { autoConnect: false }));
+
+  const [text, setText] = useState("");
+
+  const online = () => {
+    socket.emit("addexpert", curentExpert._id);
+  };
+
+  useEffect(() => {
+    //   connect with the backend
+    socket.connect();
+    online();
+  }, []);
+
+  socket.on("recmsg", (data) => {
+    // console.log(data);
+
+    // to add newly recieved message on screen
+    console.log(data);
+    const newList = [...msgList, data];
+    setMsgList(newList);
+  });
+
+  const sendMessage = () => {
+    let obj = { message: text, sent: true };
+
+    // for sending the event on backend
+    socket.emit("sendstudent", obj);
+
+    // to add newly sent message on screen
+    const newList = [...msgList, obj];
+    setMsgList(newList);
+
+    setText("");
+  };
+
+  const displayMessages = () => {
+    return msgList.map((msgobj) => (
+      <div
+        className={
+          msgobj.sent ? "sent-msg message-body" : "rec-msg message-body"
+        }
+      >
+        <p>{msgobj.message}</p>
+      </div>
+    ));
+  };
 
     return (
         <section style={{ backgroundColor: "#eee" }}>
