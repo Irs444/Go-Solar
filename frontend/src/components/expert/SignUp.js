@@ -149,7 +149,7 @@ const SignUp = () => {
                     type="submit"
                     className="btn  btn-block btn-lg  text-body"
                     disabled={signupForm.isSubmitting}
-                    style={{backgroundColor:"#CF9FFF"}}
+                    style={{backgroundColor:"#19A7CE"}}
                   >
                     { signupForm.isSubmitting && <span className="spinner-border spinner-border-sm"></span>}
                 &nbsp;&nbsp;

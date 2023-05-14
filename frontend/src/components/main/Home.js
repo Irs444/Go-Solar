@@ -537,16 +537,7 @@ function Home() {
                     data-mdb-parent="#accordionFlushExample"
                   >
                     <div className="accordion-body text-muted">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life
-                      accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                      non cupidatat skateboard dolor brunch. Food truck quinoa
-                      nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
-                      put a bird on it squid single-origin coffee nulla assumenda
-                      shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-                      wes anderson cred nesciunt sapiente ea proident. Ad vegan
-                      excepteur butcher vice lomo. Leggings occaecat craft beer
-                      farm-to-table, raw denim aesthetic synth nesciunt you probably
-                      haven't heard of them accusamus labore sustainable VHS.
+                    A solar system will help you reduce the amount of money you are paying on electricity whilst also generating excess electricity which can be sent back to the grid for a Feed-In Tariff. It’s pretty simple. Install solar and produce your own electricity, use this instead of buying from the electricity retailers. And you will also be paid a feed-in tariff for any excess solar your home doesn’t use.
                     </div>
                   </div>
                 </div>
@@ -562,7 +553,7 @@ function Home() {
                       aria-controls="flush-collapseTwo"
                     >
                       {" "}
-                      <strong>Non cupidatat skateboard dolor brunch?</strong>{" "}
+                      <strong>How much will it cost?</strong>{" "}
                     </button>
                   </h2>
                   <div
@@ -572,16 +563,7 @@ function Home() {
                     data-mdb-parent="#accordionFlushExample"
                   >
                     <div className="accordion-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life
-                      accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                      non cupidatat skateboard dolor brunch. Food truck quinoa
-                      nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
-                      put a bird on it squid single-origin coffee nulla assumenda
-                      shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-                      wes anderson cred nesciunt sapiente ea proident. Ad vegan
-                      excepteur butcher vice lomo. Leggings occaecat craft beer
-                      farm-to-table, raw denim aesthetic synth nesciunt you probably
-                      haven't heard of them accusamus labore sustainable VHS.
+                    We have Solar Packages starting from $0 upfront with easy to manage monthly repayments. The average cost of a 6.6kW Solar system can range from $7k-$10k. Up to $6,000 of this is covered by state and federal rebates. This means you only pay a small amount upfront to have solar panels at your property.
                     </div>
                   </div>
                 </div>
@@ -598,8 +580,7 @@ function Home() {
                     >
                       {" "}
                       <strong>
-                        Praesentium voluptatibus temporibus consequatur non
-                        aspernatur?
+                      How long will my solar installation take?
                       </strong>{" "}
                     </button>{" "}
                   </h2>
@@ -610,14 +591,7 @@ function Home() {
                     data-mdb-parent="#accordionFlushExample"
                   >
                     <div className="accordion-body">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-                      optio vitae inventore autem fugiat rerum sed laborum. Natus
-                      recusandae laboriosam quos pariatur corrupti id dignissimos
-                      deserunt, praesentium voluptatibus temporibus consequatur non
-                      aspernatur laborum rerum nemo dolorem libero inventore provident
-                      exercitationem sunt totam aperiam. Facere sunt quos commodi
-                      obcaecati temporibus alias amet! Quam quisquam laboriosam quae
-                      repellendus non cum adipisci odio?
+                    Typically a 5-10kW system is installed in 1 day. Larger systems can take a couple of days. Our inhouse team takes care of the administration side of applying for rebates and approvals before the installation process can take place so get in touch today so our Cerium Energy experts can start your process.
                     </div>
                   </div>
                 </div>
