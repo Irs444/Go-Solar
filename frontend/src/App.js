@@ -100,7 +100,7 @@ function App() {
             <Route path="UserProfile" element={<UserProfile />} />
             <Route path="CheckoutPage" element={<CheckoutPage />} />
             <Route path="cart" element={<Cart />} />
-            <Route path="chat" element={<UserChat />} />
+            <Route path="chat/:expertid" element={<UserChat />} />
 
           </Route>
           <Route path="Expert" element={<Expert />} >
