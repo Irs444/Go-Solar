@@ -41,7 +41,7 @@ const ExpertChat = () => {
         let obj = { message: text, sent: true };
 
         // for sending the event on backend
-        socket.emit("sendmsg", obj);
+        socket.emit("sendstudent", obj);
 
         // to add newly sent message on screen
         const newList = [...msgList, obj];
