@@ -38,6 +38,7 @@ const Elogin = () => {
         });
         // setLoggedIn(true);
         // navigate('/main/ListEquipment');
+        sessionStorage.setItem('expert', JSON.stringify(values));
 
       } else if (res.status === 401){
         Swal.fire({
