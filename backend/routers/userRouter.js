@@ -52,4 +52,15 @@ router.get('/getbyemail/:email', (req, res) => {
 
 });
 
+router.put('/update/:id', (req, res) => {
+    Model.findByIdAndUpdate(req.params.id, req.body, {new : true})
+    .then((result) => {
+       res.json(result); 
+    }).catch((err) => {
+        console.error(err);
+        res.status(500).json(err);
+    });
+
+});
+
 module.exports = router;

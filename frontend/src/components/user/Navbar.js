@@ -40,6 +40,12 @@ function Navbar() {
             </NavLink>
             
           </li>
+          <li className="nav-item">
+          <NavLink className="nav-link" to="/User/CheckOutPage">
+             CheckOut
+            </NavLink>
+            </li>
+          
           {/* <li className="nav-item">
             <NavLink className="nav-link" to="/manageorders">
               ManageOrders

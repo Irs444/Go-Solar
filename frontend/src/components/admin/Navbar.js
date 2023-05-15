@@ -104,13 +104,14 @@ function Navbar() {
             data-mdb-toggle="dropdown"
             aria-expanded="false"
           >
-            <img
+           <Link to="/login"> <img 
               src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
               className="rounded-circle"
               height={25}
               alt="Black and White Portrait of a Man"
               loading="lazy"
             />
+            </Link>
           </a>
           <ul
             className="dropdown-menu dropdown-menu-end"
