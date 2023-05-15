@@ -16,6 +16,7 @@ import seller from '../../imgs/seller.jpg'
 import Swal from 'sweetalert2';
 import { useFormik } from 'formik';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
+import ResetPassword from './ResetPassword';
 
 function SellerLogin() {
     
@@ -92,7 +93,10 @@ function SellerLogin() {
               value={loginForm.values.password}
               onChange={loginForm.handleChange} wrapperClass='mb-4' label='Password'  size="lg"/>
 
-              <a className="small text-muted " style={{color: '#609966'}} href="#!">Forgot password?</a>
+
+<Link className="small text-muted " style={{color: '#609966'}} to='/main/SResetPassword'>Forgot password?</Link>
+
+           
               <br/>
               <button className=" btn mt-2 mb-2 px-5  btn-lg btn-block" style={{background:"linear-gradient(to right, rgb(252, 74, 26), rgb(247, 183, 51))", color:"white"}} >Login</button>
               <p className="mb-3 pb-lg-2" style={{color: '#FF5349'}}> <a href="#!" style={{color: '#FF5349'}}> <Link className="nav-link" to="/main/SellerSignUp">

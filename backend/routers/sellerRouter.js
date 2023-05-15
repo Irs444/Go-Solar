@@ -40,5 +40,15 @@ router.get('/getall', (req, res) => {
     });
 
 });
+router.get('/getbyemail/:email', (req, res) => {
+    Model.findOne({email : req.params.email})
+    .then((result) => {
+       res.json(result); 
+    }).catch((err) => {
+        console.error(err);
+        res.status(500).json(err);
+    });
+
+});
 
 module.exports = router;

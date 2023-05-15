@@ -1,4 +1,4 @@
-import { MDBCard, MDBCardBody, MDBContainer } from 'mdb-react-ui-kit'
+import { MDBCard,  MDBContainer } from 'mdb-react-ui-kit'
 import React from 'react'
 import { Link } from 'react-router-dom';
 

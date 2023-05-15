@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { io } from "socket.io-client";
 import app_config from "../../config";
-// import "./chat.css";
+import "./chat.css";
 
 const UserChat = () => {
     // backend url
