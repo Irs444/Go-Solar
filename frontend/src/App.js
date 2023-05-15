@@ -32,7 +32,7 @@ import CheckoutForm from './components/main/CheckoutForm';
 import { UserProvider } from './context/UserContext';
 import UserChat from './components/user/Chat';
 
-import Elogin from './components/expert/Elogin';
+import Elogin from './components/main/Elogin';
 import SignUp from './components/expert/SignUp';
 
 const stripePromise = loadStripe("pk_test_51N5i2kSE8ALNlcfUtgUUY9EuKBo2R5jT2xc1SmEreUZA03N6EJC4ReRHCClCD6XNR75gBTQ5SwC6az8iE18w1OaQ00UeK2oh7O");

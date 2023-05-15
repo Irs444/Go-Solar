@@ -6,6 +6,7 @@ import solar from '../../imgs/solar.jpg'
 import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
 import { Link, useNavigate } from 'react-router-dom';
 import useUserContext from '../../context/UserContext';
+
 const Elogin = () => {
 
   const navigate = useNavigate();
@@ -36,8 +37,10 @@ const Elogin = () => {
           tittle: "nice",
           text: "You have succesfyll login",
         });
+        const data = await res.json();
+        sessionStorage.setItem('expert', JSON.stringify(data));
         // setLoggedIn(true);
-        // navigate('/main/ListEquipment');
+        navigate('/expert/ExpertChat');
 
       } else if (res.status === 401){
         Swal.fire({
@@ -114,13 +117,15 @@ const Elogin = () => {
             </a>
           </div>
           <div className="text-center text-lg-start mt-4 pt-2">
-            <button
+           {/* <Link to="/expert/ExpertChat"> */}
+           <button
               type="submit"
               className="btn btn-primary btn-lg" 
               style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
             >
               Login
             </button>
+           {/* </Link> */}
             <p className="small fw-bold mt-2 pt-1 mb-0">
               Don't have an account?{" "}
               <Link to="/main/signup">Register</Link>
