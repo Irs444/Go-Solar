@@ -40,7 +40,8 @@ const Elogin = () => {
         const data = await res.json();
         sessionStorage.setItem('expert', JSON.stringify(data));
         // setLoggedIn(true);
-        navigate('/expert/ExpertChat');
+        // navigate('/main/ListEquipment');
+        sessionStorage.setItem('expert', JSON.stringify(values));
 
       } else if (res.status === 401){
         Swal.fire({

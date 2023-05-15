@@ -34,6 +34,7 @@ import UserChat from './components/user/Chat';
 
 import Elogin from './components/main/Elogin';
 import SignUp from './components/expert/SignUp';
+import PageNotFound from './PageNotFound';
 
 const stripePromise = loadStripe("pk_test_51N5i2kSE8ALNlcfUtgUUY9EuKBo2R5jT2xc1SmEreUZA03N6EJC4ReRHCClCD6XNR75gBTQ5SwC6az8iE18w1OaQ00UeK2oh7O");
 function App() {
@@ -78,6 +79,7 @@ function App() {
             <Route path="SellerLogin" element={<SellerLogin />} />
             <Route path="SellerSignUp" element={<SellerSignUp />} />
             <Route path="ListEquipment" element={<ListEquipment />} />
+            {/* <Route path='*' element={<PageNotFound />} /> */}
             {/* <Route path="checkout" element={<Elements options={options} stripe={stripePromise}> <CheckoutForm /> </Elements>} /> */}
           </Route>
           <Route path="Seller" element={<SellerAuth> <Seller /> </SellerAuth>} >
@@ -98,7 +100,7 @@ function App() {
             <Route path="UserProfile" element={<UserProfile />} />
             <Route path="CheckoutPage" element={<CheckoutPage />} />
             <Route path="cart" element={<Cart />} />
-            <Route path="chat" element={<UserChat />} />
+            <Route path="chat/:expertid" element={<UserChat />} />
 
           </Route>
           <Route path="Expert" element={<Expert />} >
@@ -109,6 +111,7 @@ function App() {
             <Route path="expertSignup" element={<SignUp />} />
 
           </Route>
+            <Route path="*" element={<PageNotFound />} />
         </Routes>
 
       </UserProvider>

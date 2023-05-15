@@ -72,7 +72,7 @@ function SellerLogin() {
           </MDBCol>
 
           <MDBCol md='6'>
-            <MDBCardBody className='d-flex flex-column justify-content-center'>
+            <MDBCardBody className='d-flex flex-column justify-content-center'> 
 <form onSubmit={loginForm.handleSubmit}>
               <div className='d-flex flex-column  '>
                 <img src={logo} alt="" className='justify-content-center' style={{ maxWidth: '10rem' }} />
