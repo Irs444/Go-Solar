@@ -143,7 +143,7 @@ import {
               icon: "success",
               title: "Password Reset Success!!",
             }).then(() => {
-              navigate("/main/signin");
+              navigate("/main/SellerLogin");
             });
           return res.json();
         })
@@ -153,10 +153,10 @@ import {
     };
     const validationSchema = Yup.object().shape({
       password: Yup.string()
-        .matches(
-          /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-          "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
-        )
+        // .matches(
+        //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+        //   "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+        // )
         .required("Password is Required"),
       confirm: Yup.string()
         .oneOf([Yup.ref("password"), null], "Passwords must match")

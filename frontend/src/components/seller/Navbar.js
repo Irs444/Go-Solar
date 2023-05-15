@@ -85,9 +85,9 @@ function Navbar() {
            
             
           </ul>
-          <ul>
-            <li>
-              <button className='btn btn-danger mx-4 ' >logout</button>
+          <ul className="navbar-nav">
+            <li className='nav-item'>
+              <button className='btn btn-danger mx-5 ' >logout</button>
             </li>
           </ul>
         </div>

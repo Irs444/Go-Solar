@@ -38,6 +38,7 @@ function Navbar() {
             <NavLink className="nav-link" to="/main/home">
              Home
             </NavLink>
+            
           </li>
           {/* <li className="nav-item">
             <NavLink className="nav-link" to="/manageorders">

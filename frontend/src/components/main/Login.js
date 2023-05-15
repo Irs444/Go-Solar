@@ -37,6 +37,8 @@ const Login = () => {
           text: "You have succesfyll login",
         });
         setLoggedIn(true);
+        const data=await res.json();
+        sessionStorage.setItem('user',JSON.stringify(data));
         navigate('/main/ListEquipment');
 
       } else if (res.status === 401){
