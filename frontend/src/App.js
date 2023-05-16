@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import './App.css'
 
 import Signup from './components/main/Signup';
 import Login from './components/main/Login';

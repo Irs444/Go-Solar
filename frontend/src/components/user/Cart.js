@@ -3,8 +3,23 @@ import useProductContext from "../../context/ProductContext";
 import CheckoutPage from "./CheckoutPage";
 import { MDBCard, MDBCardBody, MDBCardImage, MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
+import app_config from "../../config";
+import {
+  PaymentElement,
+  LinkAuthenticationElement,
+  useStripe,
+  useElements
+} from "@stripe/react-stripe-js";
 
 const Cart = () => {
+  const stripe = useStripe();
+  const elements = useElements();
+
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const { apiUrl } = app_config;
   const {
     cartItems,
     addItemToCart,
@@ -14,6 +29,79 @@ const Cart = () => {
     getCartTotal,
     getCartItemsCount,
   } = useProductContext();
+  useEffect(() => {
+    if (!stripe) {
+      return;
+    }
+
+    const clientSecret = new URLSearchParams(window.location.search).get(
+      "payment_intent_client_secret"
+    );
+
+    if (!clientSecret) {
+      return;
+    }
+
+    stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
+      switch (paymentIntent.status) {
+        case "succeeded":
+          setMessage("Payment succeeded!");
+          break;
+        case "processing":
+          setMessage("Your payment is processing.");
+          break;
+        case "requires_payment_method":
+          setMessage("Your payment was not successful, please try again.");
+          break;
+        default:
+          setMessage("Something went wrong.");
+          break;
+      }
+    });
+  }, [stripe]);
+
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!stripe || !elements) {
+      // Stripe.js hasn't yet loaded.
+      // Make sure to disable form submission until Stripe.js has loaded.
+      return;
+    }
+
+    setIsLoading(true);
+
+    const { error } = await stripe.confirmPayment({
+      elements,
+      confirmParams: {
+        // Make sure to change this to your payment completion page
+        return_url: "http://localhost:3000",  
+        save_payment_method: true,
+        
+      },
+    });
+
+    
+  const paymentElementOptions = {
+    layout: "tabs"
+  }
+
+    // This point will only be reached if there is an immediate error when
+    // confirming the payment. Otherwise, your customer will be redirected to
+    // your `return_url`. For some payment methods like iDEAL, your customer will
+    // be redirected to an intermediate site first to authorize the payment, then
+    // redirected to the `return_url`.
+    if (error.type === "card_error" || error.type === "validation_error") {
+      setMessage(error.message);
+    } else {
+      setMessage("An unexpected error occurred.");
+    }
+
+    setIsLoading(false);
+  };
+
 
   const displayCartItems = () => {
     if (getCartItemsCount() === 0) return (
@@ -30,9 +118,11 @@ const Cart = () => {
           <div
             className="cart-item-placeholder"
             style={{
-              backgroundImage: `url('https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/3.webp')`,
+              backgroundImage: `url('${apiUrl}/${item.image}')`,
+              
             }}
           ></div>
+          
         </div>
         <div className="col-7">
           <p className="text-muted h6">{item.brand}</p>
@@ -131,91 +221,23 @@ const Cart = () => {
 
         </MDBRow>
       </MDBCard>
-
+      <form id="payment-form" onSubmit={handleSubmit}>
+<LinkAuthenticationElement
+  id="link-authentication-element"
+  onChange={(e) => setEmail(e.target.value)}
+/>
+<PaymentElement id="payment-element" options={paymentElementOptions} />
+<button disabled={isLoading || !stripe || !elements} id="submit">
+  <span id="button-text">
+    {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
+  </span>
+</button>
+{/* Show any error or success messages */}
+{message && <div id="payment-message">{message}</div>}
+</form>
     </MDBContainer>
 
-        //   </div>
-        //   <div className="col-md-4">
-        //     <div className="card">
-        //       <div className="card-body">
-        //         <h3>Summary</h3>
-        //         <hr /> 
-        //         <div
-        //                         className="rounded d-flex flex-column p-2"
-        //                         style={{ backgroundColor: "#f8f9fa" }}
-        //                     >
-        //                         <div className="p-2 me-3">
-        //                             <h4>Order Recap</h4>
-        //                         </div>
-        //                         <div className="p-2 d-flex">
-        //                             <MDBCol size="8">Contracted Price</MDBCol>
-        //                             <div className="ms-auto">$186.76</div>
-        //                         </div>
-        //                         <div className="p-2 d-flex">
-        //                             <MDBCol size="8">Amount toward deductible</MDBCol>
-        //                             <div className="ms-auto">$0.00</div>
-        //                         </div>
-        //                         <div className="p-2 d-flex">
-        //                             <MDBCol size="8">Coinsurance(0%)</MDBCol>
-        //                             <div className="ms-auto">+ $0.00</div>
-        //                         </div>
-        //                         <div className="p-2 d-flex">
-        //                             <MDBCol size="8">Copayment</MDBCol>
-        //                             <div className="ms-auto">+ $40.00</div>
-        //                         </div>
-        //                         <div className="border-top px-2 mx-2"></div>
-        //                         <div className="p-2 d-flex pt-3">
-        //                             <MDBCol size="8">
-        //                                 Total Deductible, Coinsurance, and Copay
-        //                             </MDBCol>
-        //                             <div className="ms-auto">$40.00</div>
-        //                         </div>
-        //                         <div className="p-2 d-flex">
-        //                             <MDBCol size="8">
-        //                                 Maximum out-of-pocket on Insurance Policy (not reached)
-        //                             </MDBCol>
-        //                             <div className="ms-auto">$6500.00</div>
-        //                         </div>
-        //                         <div className="border-top px-2 mx-2"></div>
-        //                         <div className="p-2 d-flex pt-3">
-        //                             <MDBCol size="8">Insurance Responsibility</MDBCol>
-        //                             <div className="ms-auto">
-        //                                 <b>$71.76</b>
-        //                             </div>
-        //                         </div>
-        //                         <div className="p-2 d-flex">
-        //                             <MDBCol size="8">
-        //                                 Patient Balance{" "}
-        //                                 <span className="fa fa-question-circle text-dark"></span>
-        //                             </MDBCol>
-        //                             <div className="ms-auto">
-        //                                 <b>$71.76</b>
-        //                             </div>
-        //                         </div>
-        //                         <div className="border-top px-2 mx-2"></div>
-        //                         <div className="p-2 d-flex pt-3">
-        //                             <MDBCol size="8">
-        //                                 <b>Total</b>
-        //                             </MDBCol>
-        //                             <div className="ms-auto">
-        //                                 <b className="text-success">$85.00</b>
-        //                             </div>
-        //                         </div>
-        //                     </div>
-        //         <p>Total: {getCartTotal()}</p>
-        //         <p>Items: {getCartItemsCount()}</p>
-        //         <button className="btn btn-danger" onClick={() => clearCart()}> Clear Cart</button>
-        //       </div>
-        //     </div>
-        //   </div>
-        // </div>
 
-      // <label>Delivery Address</label>
-      // <textarea className="form-control" />
-
-      
-      // </div>
-    // </div>
   );
 };
 
