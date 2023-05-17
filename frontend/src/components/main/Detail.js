@@ -37,7 +37,9 @@ const Detail = () => {
     
 
     return (
-        <MDBContainer className="my-5">
+        <MDBContainer className="my-4">
+            <h1>Product Detail</h1>
+            <hr />
             {
                 equipmentData !==null ? (
                     <MDBCard>
@@ -55,16 +57,18 @@ const Detail = () => {
                                     <span className="h1 fw-bold mb-0">{equipmentData.title}</span>
                                 </div>
     
-                                <h5 className="fw-normal my-4 pb-3" style={{ letterSpacing: '1px' }}>{equipmentData.description}</h5>
+                                <h5 className="fw-normal my-4 pb-1" style={{ letterSpacing: '1px' }}>{equipmentData.description}</h5>
     
-                                <p className="mb-5 pb-lg-2" style={{ color: '#393f81' }}>{equipmentData.price} </p>
-                                <MDBInput label='Quantity' id='typeNumber' type='number' />
+                                <p className="mb-1 pb-lg-2" style={{ color: '#393f81' }}>₹{equipmentData.price} </p>
+                                <MDBInput label='Quantity' id='typeNumber' type='number' /><br/>
                                 <a className="small text-muted" href="#!">Excluding Sales Tax | Free Shipping</a>
-    
-                                <Link className="btn btn-primary" to={'/main/ListEquipment'}>Add To Cart</Link>
+    <br />
+                                <a className="small text-muted" href="#!">Delivery in 3 days <i class="fas fa-shipping-fast"></i></a>
+                                <br />
+                                <Link className="btn btn-primary mb-2" to={'/main/ListEquipment'}>Add To Cart</Link>
                                 {/* <Link className="btn btn-primary" to={'/user/CheckoutPage'}>Add To Cart</Link> */}
                                 {/* <MDBBtn className="mb-4 px-5" color='' size='lg'>Add to Cart</MDBBtn> */}
-                                <Link className="btn btn-primary" to={'/user/CheckoutPage'} >Book Now</Link>
+                                <Link className="btn btn-success" to={'/user/CheckoutPage'} >Book Now</Link>
                                 <p className="mb-3 pb-lg-2" style={{ color: '#3c6255' }}> <a href="#!" style={{ color: '#609966' }}>
                                     In Stock
                                 </a></p>

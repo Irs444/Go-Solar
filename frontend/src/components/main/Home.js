@@ -30,8 +30,7 @@ function Home() {
           style={{ position: "relative" }}
           draggable="false"
         >
-          {/**/}
-          {/**/}
+
           <section
             draggable="false"
             className="overflow-hidden pt-0"
@@ -39,11 +38,11 @@ function Home() {
           >
 
           </section>
-          {/**/}
+
         </div>
         <div data-draggable="true" className="" style={{ position: "relative" }}>
-          {/**/}
-          {/**/}
+
+
           <section
             draggable="false"
             className="overflow-hidden pt-0"
@@ -68,7 +67,7 @@ function Home() {
                       <p className='fw-normal mb-5'>Go Solar is transforming the way we access Renewable energy with simple and powerful solutions.</p>
                       <Link
                         className="btn   btn-warning btn-lg py-3 px-5 me-md-2 mb-3"
-                       to={'/expert/Contacts'}
+                        to={'/expert/Contacts'}
                         role="button"
                         aria-controls="#picker-editor"
                       >
@@ -83,11 +82,11 @@ function Home() {
             </section>
             {/* <Link   className="btn btn-primary rounded-pill  mx-2 sticky-button me-1" to={'/expert/ExpertChat'}>Chat With us <MDBIcon far icon="comment-alt" /></Link> */}
           </section>
-          {/**/}
+
         </div>
         <div data-draggable="true" className="" style={{ position: "relative" }}>
-          {/**/}
-          {/**/}
+
+
           <section draggable="false" className="container pt-5" data-v-271253ee="">
             <section className="mb-10 text-center">
               <style
@@ -194,89 +193,89 @@ function Home() {
               </div>
             </section>
           </section>
-          {/**/}
+
         </div>
         <div data-draggable="true" className="" style={{ position: "relative" }}>
-          {/**/}
-          {/**/}
+
+
           <section draggable="false" className="container pt-5" data-v-271253ee="">
             <section className="mb-10">
-              <h1 className="fw-bold mb-7 text-center" style={{color:"#19376D"}}>G'day! <span className='fw-normal'>How Can We</span> Help?</h1>
+              <h1 className="fw-bold mb-7 text-center" style={{ color: "#19376D" }}>G'day! <span className='fw-normal'>How Can We</span> Help?</h1>
               <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
-      <MDBCol>
-        <MDBCard className='h-100'>
-        <MDBCardTitle  className='display-6 fw-bold text-center' style={{color:"#19376D"}}>Silver</MDBCardTitle>
-          <MDBCardImage
-            src='/one.png'
-            alt='...'
-            position='top'
-            style={{height:"350px"}}
-          />
-          <MDBCardBody>
-          
-          <div className="">
-          <MDBCardText ><i class="fas fa-circle-check"></i> 415w Risen Panels</MDBCardText>
-            <MDBCardText><i class="fas fa-circle-check"></i> Goodwe Inverter</MDBCardText>
-            <MDBCardText><i class="fas fa-circle-check"></i> 25 Year Panel Warranty</MDBCardText>
-            <MDBCardText  ><i class="fas fa-circle-check"></i> 10 Year Inverter Warranty</MDBCardText>
-           
-            
-          </div>
-          </MDBCardBody>
-          <MDBCardFooter>
-          <button type="button"  class="btn btn-warning rounded-pill float-end w-50" style={{color:"white"}}>Read More</button>
-          </MDBCardFooter>
-        </MDBCard>
-      </MDBCol>
-      <MDBCol>
-        <MDBCard className='h-100'>
-        <MDBCardTitle  className='display-6 fw-bold text-center' style={{color:"#19376D"}}>Gold</MDBCardTitle>
-          <MDBCardImage
-            src='/two.png'
-            alt='...'
-            position='top' 
-            style={{height:"350px"}}
-          />
-          <MDBCardBody>
-          
-          <MDBCardText ><i class="fas fa-circle-check"></i> 415w Jinko N Panels</MDBCardText>
-            <MDBCardText><i class="fas fa-circle-check"></i> Sungrow Inverter</MDBCardText>
-            <MDBCardText><i class="fas fa-circle-check"></i> 25 Year Panel Warranty</MDBCardText>
-            <MDBCardText  ><i class="fas fa-circle-check"></i> 10 Year Inverter Warranty</MDBCardText>
-           
-         
-          </MDBCardBody>
-          <MDBCardFooter>
-          <button type="button"  class="btn btn-warning rounded-pill w-50 float-end" style={{color:"white"}}>Read More</button>
-          </MDBCardFooter>
-        </MDBCard>
-      </MDBCol>
-      <MDBCol>
-        <MDBCard className='h-100'>
-        <MDBCardTitle className='display-6 fw-bold text-center' style={{color:"#19376D"}}>Platinum</MDBCardTitle>
-          <MDBCardImage
-            src='/three.png'
-            alt='...'
-            position='top'
-            style={{height:"350px"}}
-          />
-          <MDBCardBody>
-           
-          <MDBCardText ><i class="fas fa-circle-check"></i> 410w REC Alpha Pure R</MDBCardText>
-            <MDBCardText><i class="fas fa-circle-check"></i> Fronius Inverter</MDBCardText>
-            <MDBCardText><i class="fas fa-circle-check"></i> 25 Year Panel Warranty</MDBCardText>
-            <MDBCardText  ><i class="fas fa-circle-check"></i> 10 Year Inverter Warranty</MDBCardText>
-           
-          </MDBCardBody>
-          <MDBCardFooter>
-          <button type="button"  class="btn btn-warning rounded-pill w-50 float-end" style={{color:"white"}}>Read More</button>
-          </MDBCardFooter>
-        </MDBCard>
-      </MDBCol>
-    </MDBRow>
+                <MDBCol>
+                  <MDBCard className='h-100'>
+                    <MDBCardTitle className='display-6 fw-bold text-center' style={{ color: "#19376D" }}>Silver</MDBCardTitle>
+                    <MDBCardImage
+                      src='/one.png'
+                      alt='...'
+                      position='top'
+                      style={{ height: "350px" }}
+                    />
+                    <MDBCardBody>
+
+                      <div className="">
+                        <MDBCardText ><i class="fas fa-circle-check"></i> 415w Risen Panels</MDBCardText>
+                        <MDBCardText><i class="fas fa-circle-check"></i> Goodwe Inverter</MDBCardText>
+                        <MDBCardText><i class="fas fa-circle-check"></i> 25 Year Panel Warranty</MDBCardText>
+                        <MDBCardText  ><i class="fas fa-circle-check"></i> 10 Year Inverter Warranty</MDBCardText>
+
+
+                      </div>
+                    </MDBCardBody>
+                    <MDBCardFooter>
+                      <button type="button" class="btn btn-warning rounded-pill float-end w-50" style={{ color: "white" }}>Read More</button>
+                    </MDBCardFooter>
+                  </MDBCard>
+                </MDBCol>
+                <MDBCol>
+                  <MDBCard className='h-100'>
+                    <MDBCardTitle className='display-6 fw-bold text-center' style={{ color: "#19376D" }}>Gold</MDBCardTitle>
+                    <MDBCardImage
+                      src='/two.png'
+                      alt='...'
+                      position='top'
+                      style={{ height: "350px" }}
+                    />
+                    <MDBCardBody>
+
+                      <MDBCardText ><i class="fas fa-circle-check"></i> 415w Jinko N Panels</MDBCardText>
+                      <MDBCardText><i class="fas fa-circle-check"></i> Sungrow Inverter</MDBCardText>
+                      <MDBCardText><i class="fas fa-circle-check"></i> 25 Year Panel Warranty</MDBCardText>
+                      <MDBCardText  ><i class="fas fa-circle-check"></i> 10 Year Inverter Warranty</MDBCardText>
+
+
+                    </MDBCardBody>
+                    <MDBCardFooter>
+                      <button type="button" class="btn btn-warning rounded-pill w-50 float-end" style={{ color: "white" }}>Read More</button>
+                    </MDBCardFooter>
+                  </MDBCard>
+                </MDBCol>
+                <MDBCol>
+                  <MDBCard className='h-100'>
+                    <MDBCardTitle className='display-6 fw-bold text-center' style={{ color: "#19376D" }}>Platinum</MDBCardTitle>
+                    <MDBCardImage
+                      src='/three.png'
+                      alt='...'
+                      position='top'
+                      style={{ height: "350px" }}
+                    />
+                    <MDBCardBody>
+
+                      <MDBCardText ><i class="fas fa-circle-check"></i> 410w REC Alpha Pure R</MDBCardText>
+                      <MDBCardText><i class="fas fa-circle-check"></i> Fronius Inverter</MDBCardText>
+                      <MDBCardText><i class="fas fa-circle-check"></i> 25 Year Panel Warranty</MDBCardText>
+                      <MDBCardText  ><i class="fas fa-circle-check"></i> 10 Year Inverter Warranty</MDBCardText>
+
+                    </MDBCardBody>
+                    <MDBCardFooter>
+                      <button type="button" class="btn btn-warning rounded-pill w-50 float-end" style={{ color: "white" }}>Read More</button>
+                    </MDBCardFooter>
+                  </MDBCard>
+                </MDBCol>
+              </MDBRow>
             </section>
           </section>
-          {/**/}
+
         </div>
         <section draggable="false" className="container pt-5 border-bottom" data-v-271253ee="">
           <section className="mb-10">
@@ -339,14 +338,14 @@ function Home() {
           </section>
         </section>
         <div data-draggable="true" className="" style={{ position: "relative" }}>
-          {/**/}
-          {/**/}
+
+
           <section draggable="false" className="container pt-5 border-bottom " data-v-271253ee="">
             <section className="mb-10">
               <Contacts />
             </section>
           </section>
-          {/**/}
+
         </div>
         <div
           data-draggable="true"
@@ -354,8 +353,8 @@ function Home() {
           style={{ position: "relative" }}
           draggable="false"
         >
-          {/**/}
-          {/**/}
+
+
           <section draggable="false" className="container pt-5" data-v-271253ee="">
             <section className="mb-10 text-center">
               <div className="row d-flex justify-content-center">
@@ -506,11 +505,11 @@ function Home() {
               </div>
             </section>
           </section>
-          {/**/}
+
         </div>
         <div data-draggable="true" className="" style={{ position: "relative" }}>
-          {/**/}
-          {/**/}
+
+
           <section draggable="false" className="container pt-5" data-v-271253ee="">
             <section className="mb-10">
               <h2 className="fw-bold mb-4 ps-4">Frequently asked questions</h2>
@@ -537,7 +536,7 @@ function Home() {
                     data-mdb-parent="#accordionFlushExample"
                   >
                     <div className="accordion-body text-muted">
-                    A solar system will help you reduce the amount of money you are paying on electricity whilst also generating excess electricity which can be sent back to the grid for a Feed-In Tariff. It’s pretty simple. Install solar and produce your own electricity, use this instead of buying from the electricity retailers. And you will also be paid a feed-in tariff for any excess solar your home doesn’t use.
+                      A solar system will help you reduce the amount of money you are paying on electricity whilst also generating excess electricity which can be sent back to the grid for a Feed-In Tariff. It’s pretty simple. Install solar and produce your own electricity, use this instead of buying from the electricity retailers. And you will also be paid a feed-in tariff for any excess solar your home doesn’t use.
                     </div>
                   </div>
                 </div>
@@ -563,7 +562,7 @@ function Home() {
                     data-mdb-parent="#accordionFlushExample"
                   >
                     <div className="accordion-body">
-                    We have Solar Packages starting from $0 upfront with easy to manage monthly repayments. The average cost of a 6.6kW Solar system can range from $7k-$10k. Up to $6,000 of this is covered by state and federal rebates. This means you only pay a small amount upfront to have solar panels at your property.
+                      We have Solar Packages starting from $0 upfront with easy to manage monthly repayments. The average cost of a 6.6kW Solar system can range from $7k-$10k. Up to $6,000 of this is covered by state and federal rebates. This means you only pay a small amount upfront to have solar panels at your property.
                     </div>
                   </div>
                 </div>
@@ -580,7 +579,7 @@ function Home() {
                     >
                       {" "}
                       <strong>
-                      How long will my solar installation take?
+                        How long will my solar installation take?
                       </strong>{" "}
                     </button>{" "}
                   </h2>
@@ -591,14 +590,14 @@ function Home() {
                     data-mdb-parent="#accordionFlushExample"
                   >
                     <div className="accordion-body">
-                    Typically a 5-10kW system is installed in 1 day. Larger systems can take a couple of days. Our inhouse team takes care of the administration side of applying for rebates and approvals before the installation process can take place so get in touch today so our Cerium Energy experts can start your process.
+                      Typically a 5-10kW system is installed in 1 day. Larger systems can take a couple of days. Our inhouse team takes care of the administration side of applying for rebates and approvals before the installation process can take place so get in touch today so our Cerium Energy experts can start your process.
                     </div>
                   </div>
                 </div>
               </div>
             </section>
           </section>
-          {/**/}
+
         </div>
         <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
           <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>

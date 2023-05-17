@@ -115,8 +115,8 @@ const Cart = () => {
 
            <p>Total: {getCartTotal()}</p>
            <p>Items: {getCartItemsCount()}</p>
-           <button className="btn btn-danger" onClick={() => clearCart()}> Clear Cart</button>
-           <Link to='/User/CheckOutPage' className="btn btn-danger" > CheckOut</Link>
+           <button className="btn btn-danger mb-2" onClick={() => clearCart()}> Clear Cart</button>
+           <Link to='/User/CheckOutPage' className="btn btn-primary" > CheckOut</Link>
          </div>
        </div>
      {/* </div> */}
