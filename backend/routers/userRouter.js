@@ -26,7 +26,7 @@ Model.findOne(req.body)
     
 }).catch((err) => {
    console.error(err);
-   res.statuts(500).json(err); 
+   res.status(500).json(err); 
 });
 });
 

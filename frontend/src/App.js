@@ -39,38 +39,17 @@ import PageNotFound from './PageNotFound';
 import ResetPassword from './components/main/ResetPassword';
 import SResetPassword from './components/main/SResetPassword';
 import UserAuth from './auth/UserAuth';
+import LoginAuth from './auth/LoginAuth';
+import ShoppingCart from './components/user/ShoppingCart';
 
-const stripePromise = loadStripe("pk_test_51N5i2kSE8ALNlcfUtgUUY9EuKBo2R5jT2xc1SmEreUZA03N6EJC4ReRHCClCD6XNR75gBTQ5SwC6az8iE18w1OaQ00UeK2oh7O");
+
 function App() {
 
 
-  const [clientSecret, setClientSecret] = useState("");
-  const appearance = {
-    theme: 'stripe',
-  };
-  const options = {
-    clientSecret,
-    appearance,
-  };
-
-  // useEffect(() => {
-  //   // Create PaymentIntent as soon as the page loads
-  //   fetch("http://localhost:5000/create-payment-intent", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => setClientSecret(data.clientSecret));
-  // }, []);
+  
 
   return <BrowserRouter>
 
-    {/* {clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
-          <CheckoutForm />
-        </Elements>
-      )} */}
     <ProductProvider>
       <UserProvider>
         <Routes>
@@ -78,7 +57,7 @@ function App() {
           <Route path="main" element={<Main />} >
             <Route path='details/:id' element={<Detail />} />
             <Route path="signup" element={<Signup />} />
-            <Route path="Login" element={<Login />} />
+            <Route path="Login" element={ <LoginAuth> <Login /> </LoginAuth>} />
             <Route path="Home" element={<Home />} />
             <Route path="SellerLogin" element={<SellerLogin />} />
             <Route path="SellerSignUp" element={<SellerSignUp />} />
@@ -105,7 +84,7 @@ function App() {
             <Route path="ManageOrders" element={<ManageOrders />} />
             <Route path="UserProfile" element={<UserProfile />} />
             <Route path="CheckoutPage" element={<CheckoutPage />} />
-            <Route path="cart" element={<Cart />} />
+            <Route path="cart" element={ <ShoppingCart /> } />
             <Route path="chat/:expertid" element={<UserChat />} />
 
           </Route>
