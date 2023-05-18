@@ -7,7 +7,7 @@ import app_config from "../../config";
 
 
 const Cart = () => {
-  
+
 
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState(null);
@@ -24,7 +24,7 @@ const Cart = () => {
     getCartItemsCount,
   } = useProductContext();
 
- 
+
 
 
   const displayCartItems = () => {

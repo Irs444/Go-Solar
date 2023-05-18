@@ -54,7 +54,7 @@ function App() {
       <UserProvider>
         <Routes>
           <Route path="/" element={<Navigate to="/main/home" />} />
-          <Route path="main" element={<Main />} >
+          <Route path="main" element=  {<Main />} >
             <Route path='details/:id' element={<Detail />} />
             <Route path="signup" element={<Signup />} />
             <Route path="Login" element={ <LoginAuth> <Login /> </LoginAuth>} />
