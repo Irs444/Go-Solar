@@ -33,6 +33,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("checkexpert", (id) => {
+    console.log(connectedExperts[id]);
     socket.emit("checkexpertfromserver", {
       status: "online",
       socketId: connectedExperts[id],

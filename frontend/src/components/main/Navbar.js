@@ -113,6 +113,11 @@ function Navbar() {
                   Contact Us
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/user/chat">
+                  Chat with Expert
+                </NavLink>
+              </li>
               {/* <li className="nav-item">
                 <NavLink className="nav-link" to="/user/cart">
                   Cart

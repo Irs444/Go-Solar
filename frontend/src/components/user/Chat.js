@@ -6,9 +6,13 @@ import app_config from "../../config";
 import "./chat.css";
 
 const UserChat = () => {
+
+    const expertid = '645f21a2177be363a25206f2'
     // backend url
     const url = app_config.apiUrl;
-    const { expertid } = useParams();
+    // const { expertid } = useParams();
+
+    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
     const [expertOnline, setExpertOnline] = useState(false);
     const [expertSocketId, setExpertSocketId] = useState("");
@@ -58,7 +62,8 @@ const UserChat = () => {
     });
 
     const sendMessage = () => {
-        let obj = { message: text, sent: true, socketId: expertSocketId };
+        console.log(expertSocketId);
+        let obj = { message: text, sent: true, socketId: expertSocketId, time: new Date(), name: currentUser.name };
         // console.log(obj);
         // for sending the event on backend
         socket.emit("sendmsg", obj);
